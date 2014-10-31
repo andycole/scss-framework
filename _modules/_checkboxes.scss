@@ -1,0 +1,35 @@
+.checkbox {
+
+    input[type=checkbox] {
+        position: absolute; 
+        overflow: hidden; 
+        clip: rect(0 0 0 0); 
+        height:1px; 
+        width:1px; 
+        margin:-1px; 
+        padding:0;
+        border:0;
+    }
+
+    input[type=checkbox] + label {
+        @include type_scale(xsmall);
+        display:inline-block;
+        vertical-align:middle;
+        cursor:pointer;
+        color: lighten($midgray,30%);
+        .icon {
+            fill:lighten($midgray,30%);
+            width:22px;
+            height:22px;
+            margin-right:3px;
+        }
+    }
+
+    input[type=checkbox]:checked + label { 
+        color:$darkgray;
+        .icon {
+            fill: $limegreen;
+        }
+    }
+
+}

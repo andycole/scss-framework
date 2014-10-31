@@ -1,0 +1,53 @@
+.games_list {
+    @include clearfix();
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .game_item {
+        float: left;
+        width: 45%;
+        height: 200px;
+        margin: 0 10px 25px 10px;
+        padding:10px;
+        border-bottom:2px solid $greywhite;
+
+        @include clearfix();
+
+        .game_image {
+            float: left;
+            width: 25%;
+            margin: 0 3% 0 0;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .game_details {
+            float: left;
+            width: 70%;
+
+            h3 {
+                margin: 0;
+            }
+
+            .game_details-desc {
+                @include type_scale(small);
+                line-height:1.75;
+                font-family: $sans-font-family;
+            }
+
+            .game_details-meta {
+                .label {
+                    @include type_weight(bold);
+                    color: $darkgray;
+                }
+                margin: 5px 0;
+                @include type_scale(small);
+                line-height:1.75;
+                font-family: $sans-font-family;
+            }
+        }
+    }
+}

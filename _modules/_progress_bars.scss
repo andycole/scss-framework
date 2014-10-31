@@ -1,0 +1,51 @@
+$default-base-border-radius: 10px !default;
+$default-meter-color: $lightblue !default;
+$default-base-color: $white !default;
+$default-meter-height: 20px !default;
+
+@mixin progress-meter($meter-height: $default-meter-height, $border-radius: $default-base-border-radius, $meter-color: $default-meter-color) {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: $meter-height;
+    position: relative;
+    @include box-shadow(rgba(0, 0, 0, 0.1) 0 1px 2px inset);
+    border-radius: $border-radius;
+    > span {
+        border-radius: $border-radius;
+        display:block;
+        height: $meter-height;
+    }
+}
+
+@mixin progress-meter-color($meter-color: $apm-meter-color) {
+  background-color: $meter-color;
+  position: relative;
+}
+
+// Add grey meter mixin to a selector
+.progress-bar {
+  
+    background-color: $default-base-color;
+    @include progress-meter();
+
+    > span {
+        @include progress-meter-color($lightblue);
+    }
+
+    //Color Variants
+    &.progress-bar_yellow {
+        > span {
+            @include progress-meter-color($yellow);
+        }
+    }
+
+
+    &.progress-bar_slim {
+        height:6px;
+        > span {
+            height:6px;
+        }
+    }
+
+}

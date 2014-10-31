@@ -1,0 +1,148 @@
+.thumb_up {
+    overflow:hidden;
+    border:0;
+    border-radius:3px;
+    padding:2px;
+    @include type_scale(xsmall);
+    @include type_weight(bold);
+    display:block;
+    text-align:center;
+        
+        &--vertical {
+            width:70px;
+            .thumb_up--arrow {
+                position:relative;
+                z-index: $zindex-page+1;
+                color:$white;
+                float:left;
+                width:70px;
+                height:70px;
+                border-radius: 0 0 3px 3px;
+                background: url('../img/ui/upvote.svg') 2px 8px no-repeat;
+                background-size: 66px 66px;
+            }
+            .thumb_up--count {
+                @include type_scale(base);
+                height:44px;
+                line-height:44px;
+                position:relative;
+                top:26px;
+            }
+            .thumb_up--button {
+                position:relative;
+                border-top:2px solid $white;
+                z-index:$zindex-page+2;
+                line-height:24px;
+                height:24px;
+                background-color:$upvoteButtonColor;
+                color:$upvoteTextColor;
+                float:left;
+                width:66px;
+                margin:0 2px;
+                border-radius:3px;
+            }
+            &:hover {
+                .thumb_up--arrow {
+                   background-size: 70px 70px;
+                   background-position: 0 4px;
+                }
+                .thumb_up--button {
+                    margin:0;
+                    padding-bottom:2px;
+                    width:70px;
+                }
+            }
+
+            &--voted {
+                cursor:default;
+                .thumb_up--button {
+                    color:lighten($upvoteTextColor,25%);
+                }
+            }
+
+        }
+
+        &--indicator {
+            width:44px;
+            margin-bottom:10px;
+            .thumb_up--arrow {
+                position:relative;
+                z-index: $zindex-page+1;
+                color:$white;
+                float:left;
+                width:40px;
+                height:40px;
+                border-radius: 0 0 3px 3px;
+                background: url('../img/ui/upvote.svg') 0 0 no-repeat;
+                background-size: 40px 50px;
+            }
+            .thumb_up--count {
+                @include type_scale(xsmall);
+                height:40px;
+                line-height:40px;
+                position:relative;
+                top:8px;
+            }
+
+        }
+
+        &--horizontal {
+            overflow:hidden;
+            @include inline-block;
+            .thumb_up--arrow {
+                position:relative;
+                color:$white;
+                float:left;
+                height:24px;
+                padding:0 10px 0 26px;
+                border-radius: 3px;
+                background-color:$upvoteBgColor;
+                float:left;
+                .icon {
+                    fill: $white;
+                    width:12px;
+                    height:12px;
+                    position:absolute;
+                    top:6px;
+                    left:8px;
+                }
+            }
+            .thumb_up--count {
+                height:24px;
+                line-height:24px;
+            }
+            .thumb_up--button {
+                position:relative;
+                float:left;
+                font-size:11px;
+                height:24px;
+                line-height:25px;
+                background-color:$upvoteButtonColor;
+                color:$upvoteTextColor;
+                padding:0 4px;
+                margin:0 5px 0 8px;
+                border-radius:3px;
+                &:before {
+                    content:"";
+                    position:absolute;
+                    top: 6px;
+                    left:-7px;
+                    border-top: 6px solid transparent;
+                    border-bottom: 6px solid transparent;
+                    border-right: 7px solid $upvoteButtonColor;
+                }
+            }
+            &:hover {
+                .thumb_up--arrow {
+                    background-color:lighten($upvoteBgColor,10%)
+                }
+            }
+
+            &--voted {
+                cursor:default;
+                .thumb_up--button {
+                    color:lighten($upvoteTextColor,25%);
+                }
+            }
+        }
+}

@@ -1,0 +1,65 @@
+/* Responsive utilities */
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media (min-width: $screen-xs) { @content; }
+  }
+  @else if $point == sm {
+    @media (min-width: $screen-sm) { @content; }
+  }
+  @else if $point == md {
+    @media (min-width: $screen-md)  { @content; }
+  }
+  @else if $point == lg {
+    @media (min-width: $screen-lg)  { @content; }
+  }
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+@mixin responsive-visibility($parent, $type:block) {
+
+  #{$parent} {
+      @if $type == inline {
+        display: inline !important;
+      } @else if $type == inline-block {
+        display: inline-block !important;
+      } @else {
+        display: block !important;
+      }
+  }
+  table#{$parent}  { display: table; }
+  tr#{$parent}     { display: table-row !important; }
+  th#{$parent},
+  td#{$parent}     { display: table-cell !important; }
+}
+
+@mixin responsive-invisibility($parent) {
+  #{$parent} {
+    display: none !important;
+  }
+}
+
+@include responsive-invisibility('.visible-sm, .visible-md, .visible-lg');
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@include breakpoint(sm) {
+  @include responsive-visibility('.visible-sm');
+  @include responsive-visibility('.visible-inline-sm', inline);
+  @include responsive-visibility('.visible-inline-block-sm', inline-block);
+}
+
+@include breakpoint(md) {
+  @include responsive-visibility('.visible-md');
+  @include responsive-visibility('.visible-inline-md', inline);
+  @include responsive-visibility('.visible-inline-block-md', inline-block);
+}
+
+@include breakpoint(lg) {
+  @include responsive-visibility('.visible-lg');
+  @include responsive-visibility('.visible-inline-lg', inline);
+  @include responsive-visibility('.visible-inline-block-lg', inline-block);
+}

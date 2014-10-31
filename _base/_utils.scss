@@ -1,0 +1,48 @@
+// Utility classes
+// --------------------------------------------------
+
+// Clearfix
+.cf {
+    @include clearfix();
+}
+
+.float-right {
+    float:right !important;
+}
+.float-left {
+    float:left !important;
+}
+
+
+// Toggling content
+// -------------------------
+.show {
+  display: block !important;
+}
+
+// Hide from screenreaders and browsers
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// Show only on screenreaders
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// For Affix plugin
+.affix {
+  position: fixed;
+}

@@ -1,0 +1,41 @@
+//-------------------------------
+// THE GRID - The Final Frontier
+//-------------------------------
+
+// Defaults
+$column-width: 300px;
+$gutter-width: 40px;
+$total-columns: 4;
+$total-gutters: $total-columns + 1;
+
+// Go go magic width calculator!
+// DON'T EVER TOUCH THIS YOU MONG.
+@function gridsystem-width($total-columns) {
+    @return ($column-width * $total-columns) + ($gutter-width * $total-gutters);
+}
+
+// Set $total-width to 100% for a fluid layout
+$total-width: gridsystem-width($total-columns);
+
+
+body {
+    width: 100%;
+    @include clearfix();
+}
+
+
+@mixin column($columnspan, $leftgutter: false, $rightgutter: false) {
+    $gutterspan: $columnspan - 1;
+    display: inline;
+    float: left;
+    $width: ($columnspan * $column-width) + ($gutter-width * $gutterspan);
+    @if $leftgutter {
+        padding-left: $gutter-width;
+        $width: $width + $gutter-width;
+    }
+    @if $rightgutter {
+        padding-right: $gutter-width;
+        $width: $width + $gutter-width;
+    }
+    width: $width;
+}

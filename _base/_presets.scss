@@ -1,0 +1,67 @@
+@include establish-baseline;
+
+body {
+    background-color:$bodyBackground;
+    font-family: $base-font-family;
+    font-weight: 400;
+    color: $darkgray;
+}
+
+// Headings
+#{h1, h2, h3, h4, h5} {
+    font-family: $base-font-family;
+    margin-top: 0;
+    @include type-weight(black);
+    @include margin-trailer(0.5);
+    @include type-ligatures;
+}
+h1 {
+    @include type-scale(xxlarge);
+}
+h2 {
+    @include type-scale(large);
+}
+h3 {
+    @include type-scale(medium);
+}
+h4 {
+    @include type-scale(base);
+}
+h5 {
+    @include type-scale(base);
+}
+
+// Paragraphs
+p {
+    @include type-scale(medium);
+    @include margin-trailer(0.5);
+    @include word-break(break-word);
+    @include hyphens(auto);
+    @include type-ligatures;
+    font-family: $serif-font-family;
+}
+
+// Small
+small {
+    @include type-scale(xsmall);
+}
+
+// Anchors
+a {
+    color: $linkColor;
+    text-decoration: none;
+    &:hover {
+        color: $linkColorHover;
+    }
+}
+
+
+// Text highlights
+::selection {
+  background: $textHighlightColor; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+::-moz-selection {
+  background: $textHighlightColor; /* Gecko Browsers */
+  color: #fff;
+}

@@ -1,0 +1,164 @@
+/*******************************************************************************
+ mentions game aside
+ *******************************************************************************/
+
+.aside-mentions-game {
+    font-family: $sans-font-family;
+    margin-bottom: 20px;
+    @include clearfix();
+
+    .mentions-game-platform-meta {
+        @include type_scale(small);
+
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+
+        border-top: 3px solid $greywhite;
+        border-bottom: 1px solid $greywhite;
+    }
+
+    .mentions-game-boxshot {
+        width: 80px;
+        margin-right: 16px;
+        float: left;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .mentions-game-description {
+        @include type_scale(small);
+
+        width: 199px;
+        float: left;
+    }
+}
+
+.comma-list::after {
+    content: ', ';
+}
+
+.comma-list:last-child::after {
+    content: '';
+}
+
+.aside-mentions-platform {
+    .mentions-platform-description {
+        h3 {
+            margin: 0;
+        }
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+
+        border-top: 3px solid $greywhite;
+
+        margin-bottom: 20px;
+        @include type_scale(small);
+    }
+}
+
+/*******************************************************************************
+ suggestions aside
+ *******************************************************************************/
+
+.suggestions {
+    margin-bottom: 20px;
+
+    .btn {
+        margin-bottom: 20px;
+    }
+
+    .tooltip {
+        @include type_scale(small);
+        font-family: $sans-font-family;
+        color: $midgray;
+    }
+
+    .suggestion-result {
+        @include type_scale(small);
+        font-family: $sans-font-family;
+    }
+
+}
+
+.data-table {
+    width: 100%;
+    margin-bottom: 20px;
+
+    tr:nth-child(even) {
+        background: $greywhite;
+    }
+
+    td {
+        font-family: $sans-font-family;
+        @include type_scale(small);
+
+        width: 50%;
+        padding: 5px 10px;
+
+        p {
+            font-family: $sans-font-family;
+            @include type_scale(small);
+            text-align: right;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    td:last-child {
+        text-align: right;
+    }
+}
+
+.contribute {
+    font-family: $sans-font-family;
+    background: $darkgray;
+    min-height: 200px;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 0 40px 40px 0;
+    color: #fff;
+
+    @include clearfix();
+
+    .contribute-game {
+        width: 40%;
+        margin: 20px 0 0 0;
+        float: left;
+
+        h3 {
+            color: $yellow;
+        }
+
+        .icon {
+            fill: $white;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    h2 {
+        font-weight: normal;
+        @include type_scale(xlarge);
+    }
+}
+
+.user-avatar {
+    width: 40px;
+    -webkit-border-radius: 30px 2px 30px 30px;
+    border-radius: 30px 2px 30px 30px;
+    vertical-align: middle;
+}
+
+.paralax_block-main {
+    background: #000 url("../img/wrap2.jpg") center top no-repeat;
+}

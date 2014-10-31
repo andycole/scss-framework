@@ -1,0 +1,113 @@
+.game-page {
+    margin-top:0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.game-header {
+    margin-top:15px;
+    @include clearfix();
+    padding:40px;
+    background-color:rgba(0,0,0,0.6);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    position:relative;
+
+    .boxshot {
+        float: left;
+        width: 120px;
+        margin: 0 40px 0 0;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .game_details {
+        float: left;
+        width: 60%;
+        margin: 0 0 0 0;
+        color:$white;
+
+        h1 {
+            margin: 0;
+        }
+
+        h3 {
+            @include type_scale(medium);
+            @include type_weight(thin);
+        }
+    }
+    .game-scores {
+        float:right;
+    }
+}
+
+.user_aside_details {
+    margin: 0 0 20px 0;
+    padding: 0;
+
+    li:nth-child(odd) {
+        background: #f6f6f6;
+    }
+}
+
+.game-header-menu {
+    @include clearfix();
+    position:relative;
+    z-index:$zindex-navbar-bottom;
+    background-color: #6ab7d1;
+    background-image: linear-gradient(0deg, #6ab7d1 0%, lighten(#6ab7d1,5%) 28%, lighten(#6ab7d1,5%) 100%);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3); 
+    overflow:hidden;
+    min-height:10px;
+    .options {
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        margin-left:40px;
+
+        li {
+            float: left;
+            &:last-child a::after{
+                display:none;
+            }
+            a {
+                @include type-scale(xsmall);
+                @include type-weight(bold);
+                display:block;
+                margin: 0;
+                height:45px;
+                line-height:45px;
+                position:relative;
+                z-index:2;
+                span {
+                    border-left: 1px solid rgba($white, 0.1);
+                    border-right: 1px solid rgba($black, 0.1);
+                    @include inline-block;
+                    padding: 0 15px;
+                }
+                &.link--is-active {
+                    @include linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+                }
+                .icon {
+                    width:16px;
+                    height:16px;
+                    margin-right:2px;
+                    fill:$white;
+                }
+            }
+            a, a:active {
+                color: #efefef;
+                text-decoration: none;
+            }
+            a:hover {
+                background-color:rgba($white, 0.1);
+                color: $white;
+                text-decoration: none;                  
+                .icon {
+                    fill: lighten($yellow,10%);
+                }
+            }
+        }
+    }
+}

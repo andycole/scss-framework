@@ -1,0 +1,69 @@
+// Type settings
+// --------------------------------------------------
+
+$sans-font-family:            "Droid Sans", sans-serif;
+$serif-font-family:           "Noto Serif", "Georgia", serif;
+$mono-font-family:            "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+
+$base-font-family:            $sans-font-family;
+
+// Compass Vertical Rhythm setup
+$base-font-size: 20px;
+$base-line-height: 36px;
+$rhythm-unit: "rem";
+$rem-with-px-fallback: true;
+$round-to-nearest-half-line: true;
+
+// The type-scale Map contains the whole type scale.
+// Add your own sizes or modify these, they will be available in the type-scale mixin for use.
+
+$type-scale: (
+    tiny: (
+        font-size: 9px,
+        base-lines: 0.5
+    ),
+    xxsmall: (
+        font-size: 10px,
+        base-lines: 0.5
+    ),
+    xsmall: (
+        font-size: 13px,
+        base-lines: 0.75
+    ),
+    small: (
+        font-size: 15px,
+        base-lines: 1
+    ),
+    base: (
+        font-size: 16px,
+        base-lines: 1
+    ),
+    medium: (
+        font-size: $base-font-size,
+        base-lines: 1
+    ),
+    large: (
+        font-size: 24px,
+        base-lines: 1
+    ),
+    xlarge: (
+        font-size: 30px,
+        base-lines: 1.5
+    ),
+    xxlarge: (
+        font-size: 36px,
+        base-lines: 1.5
+    ),
+    xxxlarge: (
+        font-size: 50px,
+        base-lines: 2
+    )
+);
+
+$type-weight: (
+    thin: 200,
+    light: 300,
+    regular: 400,
+    bold: 700,
+    black: 900
+);

@@ -1,0 +1,36 @@
+// App Colors
+$black:                     #111;
+$darkgray:                  #333;
+$midgray:                   #666;
+$greywhite:                 #e7e7e7;
+$white:                     #fff;
+$offwhite:                  #f6f6f6;
+$blue:                      #228fb3;
+$yellow:                    #f6c127;
+$red:                       #ea3847;
+$lightblue:                 #72bbd3;
+$limegreen:                 #8bc862;
+$darkteal:                  #475158;
+
+
+// Basics
+$bodyBackground:            $darkteal;
+$textColor:                 $black;
+$textHighlightColor:        $lightblue;
+
+// Links
+$linkColor:                 $blue;
+$linkColorHover:            darken($linkColor,10%);
+$headlineLinkColor:         $darkgray;
+$headlineLinkColorHover:    darken($headlineLinkColor,10%);
+
+// Fonts
+$headlineColor:             $darkgray;
+$subheadlineColor:          $black;
+
+// Common Elements
+$upvoteBgColor:             $limegreen;
+$upvoteButtonColor:         $greywhite;
+$upvoteTextColor:           $darkgray;
+
+$contentLabelColor:         $lightblue;

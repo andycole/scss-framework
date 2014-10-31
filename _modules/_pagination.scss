@@ -1,0 +1,109 @@
+.pagin {
+    padding:0;
+    font-weight: bold;
+    display: inline-block;
+    li {
+        display: inline;
+        &:last-child {
+            margin: 0;
+            a {
+                margin: 0;
+            }
+        }
+        a, span {
+            margin: 0 5px 0 0;
+            display: block;
+            float: left;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            padding: 4px 8px;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+        a:hover {
+            text-decoration: none !important;
+            border: 1px solid #4874af !important;
+            box-shadow: 0px 0px 2px 1px #94c1ff;
+        }
+    }
+}
+
+.pagin li.selected span,
+.pagin .selected span:hover {
+    color: #fff;
+    border: 1px solid #efbb1e;
+    background-color: #efbb1e;
+}
+.pagin li.next a, .pagin li.next .disabled {
+    background-position: 87% 50%;
+    padding-right: 14px;
+}
+.pagin li.next .disabled {
+}
+.pagin li.prev a, .pagin li.prev .disabled {
+    background-position: 13% 50%;
+    padding-left: 14px;
+}
+.pagin li.numPaginNext a,
+.pagin li.numPaginNext span {
+    margin-left: 5px;
+}
+.pagin li.numPaginPrev a,
+.pagin li.numPaginPrev span {
+    margin-right: 10px;
+}
+
+.pagin li .disabled,
+.pagin .disabled:hover {
+    border: 1px solid #ddd;
+    color: #ddd;
+    cursor: default;
+}
+
+.resultsHeader .pagin {
+    margin-right: 10px;
+}
+.resultsHeader .pagin li.next a,
+.resultsHeader .pagin li.prev a,
+.resultsHeader .pagin li.next span,
+.resultsHeader .pagin li.prev span {
+    padding: 0;
+    width: 19px;
+    background-position: 50% 50%;
+    text-indent: -999px;
+}
+.pageLabel {
+    line-height: 21px;
+}
+
+.resultsFooter .pagin,
+.article .pagin {
+    clear: both;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+.article .paginWrap {
+    text-align: center;
+}
+.article .pageHeader .paginWrap {
+    text-align: left;
+}
+.article .pagin {
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.article .pageHeader .pagin {
+    font-size: inherit;
+    padding: 5px 0 0 0;
+    background: none;
+    float: right;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+.pageFilter .pagin {
+    float: left;
+}

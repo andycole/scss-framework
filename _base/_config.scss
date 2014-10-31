@@ -1,0 +1,82 @@
+// Variables
+// ---------
+
+// Color assignment
+@import "_config/_colors";
+
+// Breakpoints
+@import "_config/_breakpoints";
+
+// Type settings
+@import "_config/_type";
+
+// Z-index master list
+$zindex-page:              1000;
+$zindex-navbar-bottom:     1025;
+$zindex-navbar-top:        1050;
+$zindex-navbar:            1060;
+$zindex-loading:           2000;
+
+// Button settings
+// --------------------------------------------------
+
+$border-radius-btn: 45px;
+
+$btn-variants: (
+    default: (
+        color:#333,
+        colorhover:#333,
+        background:#fff,
+        border:#ccc
+    ),
+    primary: (
+        color:#fff,
+        colorhover: #fff,
+        background:$lightblue,
+        border:$lightblue
+    ),
+    primary-light: (
+        color:#fff,
+        colorhover: darken($lightblue, 5%),
+        background:$lightblue,
+        border:$lightblue
+    ),
+    secondary: (
+        color:$darkgray,
+        colorhover: darken($darkgray, 5%),
+        background:$yellow,
+        border:$yellow
+    ),
+    dark-transparent: (
+        color:#fff,
+        colorhover: #fff,
+        background:rgba(0, 0, 0, 0.6),
+        border: rgba(0, 0, 0, 0.6)
+    ),
+    cancel: (
+        color:#fff,
+        colorhover: darken($lightblue, 5%),
+        background:$lightblue,
+        border:darken($lightblue, 5%)
+    ),
+    edit: (
+        color:$white,
+        colorhover: $white,
+        background:$darkgray,
+        border:$darkgray
+    )
+);
+
+
+// Switch button settings
+// --------------------------------------------------
+
+$switchTransition: .15s ease-out;
+
+$switch-variants: (
+    default: (
+        color:#333,
+        background:#fff,
+        border:#ccc
+    )
+);

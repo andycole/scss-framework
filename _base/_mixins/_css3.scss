@@ -1,0 +1,56 @@
+@mixin box-shadow($shadows...) {
+  -webkit-box-shadow: $shadows;
+          box-shadow: $shadows;
+}
+
+@mixin transition($property, $duration, $easing) {
+    -webkit-transition: $property $duration $easing; // Safari, Chrome < 26.0
+       -moz-transition: $property $duration $easing; //Firefox < 19.0
+            transition: $property $duration $easing; //W3C
+}
+
+@mixin box-sizing($val) {
+  -webkit-box-sizing: $val;
+     -moz-box-sizing: $val;
+          box-sizing: $val;
+}
+
+@mixin linear-gradient($gradientLine, $colorStops...) {
+  background-image: -webkit-linear-gradient($gradientLine, $colorStops);
+  background-image:    -moz-linear-gradient($gradientLine, $colorStops);
+  background-image:      -o-linear-gradient($gradientLine, $colorStops);
+  @if length($gradientLine) == 2 {
+  background-image:         linear-gradient(to #{inverse-side(nth($gradientLine, 1))} #{inverse-side(nth($gradientLine, 2))}, $colorStops);
+  } @else {
+  background-image:         linear-gradient(to #{inverse-side($gradientLine)}, $colorStops);
+  }
+}
+
+@mixin radial-gradient($gradient...) {
+  background-image: -webkit-radial-gradient($gradient);
+  background-image:    -moz-radial-gradient($gradient);
+  background-image:      -o-radial-gradient($gradient);
+  background-image:         radial-gradient($gradient);
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin transition-property($properties...) {
+  -webkit-transition-property: $properties;
+     -moz-transition-property: $properties;
+       -o-transition-property: $properties;
+          transition-property: $properties;
+}
+
+@mixin transform($transform...) {
+  -webkit-transform: $transform;
+     -moz-transform: $transform;
+      -ms-transform: $transform;
+       -o-transform: $transform;
+          transform: $transform;
+}

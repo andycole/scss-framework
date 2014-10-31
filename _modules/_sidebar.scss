@@ -1,0 +1,45 @@
+.sidebar_item h2 {
+    @include type-scale(medium);
+}
+.footer {
+    width: $column-width + ($gutter-width * 2);
+    @include type-scale(xsmall);
+    background-color:#f6f6f6;
+    margin-left: -($gutter-width + 5); //account for 5px border on ledft of sidebar
+    margin-right: -$gutter-width;
+    padding: $gutter-width;
+    overflow:hidden;
+    &.affix {
+        bottom:20px;
+    }
+    .footer_link {
+        float:left;
+        width:50%;
+        margin-bottom:40px;
+        @include type-weight(bold);
+        height:50px;
+        line-height: 50px;
+        color:$darkgray;
+    }
+
+    ul {
+        list-style: none;
+        margin:0;
+        padding:0;
+        li {
+            float:left;
+            padding-right:20px;
+            a {
+                color:$darkgray;
+                &:hover {
+                    color:$black;
+                    text-decoration:underline;
+                }
+            }
+        }
+    }
+}
+.aside .footer {
+    margin-right: -($gutter-width + 5); //account for 5px border on right of sidebar
+    margin-left: -$gutter-width;
+}

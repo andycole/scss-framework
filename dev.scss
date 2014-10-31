@@ -1,0 +1,23 @@
+// Base
+@import "_base/_config";
+@import "_base/_functions";
+@import "_base/_mixins";
+
+//Displays vertical rhythm gridlines on any element container
+.showgrid {
+    background-color: $white;
+    background-image: -webkit-linear-gradient(top,rgba(51,51,51,.247059)0,rgba(51,51,51,.247059)1px,rgba(255,255,255,0)1px,rgba(255,255,255,0)2px);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0px,rgba(51,51,51,.247059)),color-stop(1px,rgba(51,51,51,.247059)),color-stop(1px,rgba(255,255,255,0)),color-stop(2px,rgba(255,255,255,0)));
+    background-image: linear-gradient(to bottom,rgba(51,51,51,.247059)0,rgba(51,51,51,.247059)1px,rgba(255,255,255,0)1px,rgba(255,255,255,0)2px);
+    background-size: 100% $base-line-height;
+}
+.showgrid--btn {
+    background-color:rgba(0,0,0,0.7);
+    position:fixed;
+    top:0;
+    right:0;
+    padding:3px;
+    color:$white;
+    cursor: pointer;
+    z-index:9999;
+}
