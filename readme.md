@@ -1,8 +1,5 @@
-Sample config.rb:
 ```
-# Compass is a great cross-platform tool for compiling SASS.
-# This compass config file will allow you to
-# quickly dive right in.
+# Config.rb example
 encoding = "utf-8"
 
 #########
@@ -29,4 +26,5 @@ sourcemap= true
 
 # don't touch this
 preferred_syntax = :scss
+
 ```
