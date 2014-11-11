@@ -53,11 +53,30 @@
                 display: none;
             }
             .main {
-                @include column($total-columns - 1, true, false);
-                padding-right: $gutter-width;
+                width:100%;
+                padding-right:15px;
+                padding-left:15px;
+                @include breakpoint(md) {
+                    width:calc(100% - $gutter-width);
+                    padding-left: $gutter-width;
+                    padding-right:$gutter-width;
+                }
+                @include breakpoint(lg) {
+                    @include column($total-columns - 1, true, false);
+                    padding-right: $gutter-width;
+                    padding-left: $gutter-width;
+                }
+
             }
             .sidebar {
+                display:none;
                 @include column(1, true, true);
+                @include breakpoint(md) {
+                    display:block;
+                }
+                @include breakpoint(lg) {
+                    display:block;
+                }
             }
         }
     }
@@ -66,13 +85,32 @@
     &.l-2column-sidebar-left {
         .container {
             .aside {
-                @include column(1, true, true);
-                border-right:5px solid $offwhite;
+                display:none;
+                @include breakpoint(md) {
+                    display:block;
+                    @include column(1, true, true);
+                    border-right:5px solid $offwhite;
+                }
+                @include breakpoint(lg) {
+                    @include column(1, true, true);
+                    border-right:5px solid $offwhite;
+                    display:block;
+                }
             }
             .main {
-                @include column($total-columns - 1, true, false);
-                padding-left: $gutter-width;
-                padding-right:$gutter-width;
+                width:100%;
+                padding-right:15px;
+                padding-left:15px;
+                @include breakpoint(md) {
+                    width:calc(100% - $gutter-width);
+                    padding-left: $gutter-width;
+                    padding-right:$gutter-width;
+                }
+                @include breakpoint(lg) {
+                    @include column($total-columns - 1, true, false);
+                    padding-right: $gutter-width;
+                    padding-left: $gutter-width;
+                }
             }
             .sidebar {
                 display: none;

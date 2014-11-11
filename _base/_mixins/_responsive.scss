@@ -40,7 +40,7 @@
   }
 }
 
-@include responsive-invisibility('.visible-sm, .visible-md, .visible-lg');
+@include responsive-invisibility('.visible-sm, .visible-inline-sm, .visible-inline-block-sm, .visible-md, .visible-inline-md, .visible-inline-block-md, .visible-lg');
 
 @-ms-viewport {
   width: device-width;
