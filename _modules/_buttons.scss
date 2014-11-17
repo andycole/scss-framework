@@ -93,6 +93,9 @@
     opacity:0.65;
     box-shadow:none;
   }
+  .label {
+    font-weight:normal;
+  }
 }
 input.btn, button.btn {
   &:focus, &:active {
@@ -118,11 +121,14 @@ input.btn, button.btn {
 .btn-cancel {
   @include button-variant("cancel");
 }
-.btn-dark-transparent {
-  @include button-variant("dark-transparent");
+.btn-dark {
+  @include button-variant("dark");
 }
 .btn-dark-transparent {
   @include button-variant("dark-transparent");
+}
+.btn-light-transparent {
+  @include button-variant("light-transparent");
 }
 
 

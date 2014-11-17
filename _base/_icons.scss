@@ -22,6 +22,9 @@
     height: 32px;
     fill: #333333;
     vertical-align:middle;
+
+    // Prevents mouseleave(JS event) from firing when icon is hovered
+    pointer-events: none;
 }
 
 .svg_defs {

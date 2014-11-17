@@ -41,7 +41,6 @@
 }
 
 
-
 //Fixed width layout
 //--------------------
 .l-maxwidth {
@@ -102,7 +101,7 @@
                 padding-right:15px;
                 padding-left:15px;
                 @include breakpoint(md) {
-                    width:calc(100% - $gutter-width);
+                    width:calc(100% - #{$gutter-width});
                     padding-left: $gutter-width;
                     padding-right:$gutter-width;
                 }

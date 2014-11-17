@@ -35,3 +35,16 @@
         }
     }
 }
+
+.comments-counter {
+    color:$darkgray;
+    .icon {
+        fill:$darkgray;
+    }
+    &:hover {
+        color: $blue;
+        .icon {
+            fill: $blue;
+        }
+    }
+}

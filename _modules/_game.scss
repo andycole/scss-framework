@@ -6,30 +6,38 @@
 .game-header {
     margin-top:15px;
     @include clearfix();
-    padding:40px;
-    background-color:rgba(0,0,0,0.6);
+    background-color:rgba(40,40,40,0.9);
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     position:relative;
-
-    .boxshot {
+    overflow:hidden;
+    .game_boxscore {
         float: left;
         width: 120px;
-        margin: 0 40px 0 0;
-
-        img {
-            max-width: 100%;
+        margin: 0 50px 0 0;
+        position:relative;
+        .boxshot {
+            width:100%;
+            img {
+                max-width: 100%;
+            }
         }
+        .game-scores {
+            position:absolute;
+            bottom:-25px;
+            right:-25px;
+        }
+      
     }
 
     .game_details {
-        float: left;
-        width: 60%;
         margin: 0 0 0 0;
         color:$white;
 
         h1 {
             margin: 0;
+            line-height:$base-line-height;
+            margin-bottom:14px;
         }
 
         h3 {
@@ -51,63 +59,99 @@
     }
 }
 
-.game-header-menu {
-    @include clearfix();
-    position:relative;
-    z-index:$zindex-navbar-bottom;
-    background-color: #6ab7d1;
-    background-image: linear-gradient(0deg, #6ab7d1 0%, lighten(#6ab7d1,5%) 28%, lighten(#6ab7d1,5%) 100%);
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3); 
-    overflow:hidden;
-    min-height:10px;
-    .options {
-        margin: 0 auto;
-        padding: 0;
-        list-style: none;
-        margin-left:40px;
+.game_maincolumn {
+    margin-top:rhythm(0.45);
+    width:calc(60% - #{$gutter-width});
+    float:left;
+    margin-right:$gutter-width;
+}
+.game_subcolumn {
+    margin-top:rhythm(0.45);
+    width:40%;
+    float:left;
+}
 
-        li {
-            float: left;
-            &:last-child a::after{
+.screenshots_list {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    margin-bottom:0.9rem;
+    @include clearfix();
+    li {
+        float:left;
+        width:calc(33% - 4px);
+        margin:2px;
+        overflow:hidden;
+        a {
+            display:block;
+            position:relative;
+            .icon {
                 display:none;
+                fill:#fff;
+                position:absolute;
+                top:calc(50% - 25px);
+                left:calc(50% - 25px);
+                width:50px;
+                height:50px;
             }
-            a {
-                @include type-scale(xsmall);
-                @include type-weight(bold);
+            img {
+                max-width:100%;
                 display:block;
-                margin: 0;
-                height:45px;
-                line-height:45px;
-                position:relative;
-                z-index:2;
-                span {
-                    border-left: 1px solid rgba($white, 0.1);
-                    border-right: 1px solid rgba($black, 0.1);
-                    @include inline-block;
-                    padding: 0 15px;
-                }
-                &.link--is-active {
-                    @include linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+                //float:left;
+            }
+            &:hover {
+                img {
+                    opacity:0.7;
                 }
                 .icon {
-                    width:16px;
-                    height:16px;
-                    margin-right:2px;
-                    fill:$white;
-                }
-            }
-            a, a:active {
-                color: #efefef;
-                text-decoration: none;
-            }
-            a:hover {
-                background-color:rgba($white, 0.1);
-                color: $white;
-                text-decoration: none;                  
-                .icon {
-                    fill: lighten($yellow,10%);
+                    display:block;
                 }
             }
         }
+    }
+}
+
+.game-header--intro {
+    padding:40px 0;
+    float:left;
+    width:100%;
+    padding-right:15px;
+    padding-left:15px;
+    @include breakpoint(md) {
+        width:calc(100% - $gutter-width);
+        padding-left: $gutter-width;
+        padding-right:$gutter-width;
+    }
+    @include breakpoint(lg) {
+        padding-right: $column-width + ($gutter-width * 3);
+        padding-left: $gutter-width;
+    }
+
+}
+.game-header--guides {
+    background-color: rgba(0,0,0,0.3);
+    float:left;
+    width:100%;
+    padding:40px 0;
+    @include breakpoint(md) {
+        @include column(1, true, true);
+        display:block;
+        position:absolute;
+        top:0;
+        right:0;
+        height:600px;
+    }
+    @include breakpoint(lg) {
+        display:block;
+    }
+    h3 {
+        color:$lightgray;
+        text-align:center;
+    }
+    .btn {
+        width:80%;
+        padding:5px 0;
+        margin:rhythm(0.45) auto 0 auto;
+        display:block;
     }
 }

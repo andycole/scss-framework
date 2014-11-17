@@ -12,6 +12,15 @@
 .float-left {
     float:left !important;
 }
+.clear-left {
+  clear:left;
+}
+.clear-right {
+  clear:right;
+}
+.clear-both {
+  clear:both;
+}
 
 
 // Toggling content
@@ -45,4 +54,45 @@
 // For Affix plugin
 .affix {
   position: fixed;
+}
+
+.text-align--left {
+  text-align:left;
+}
+.text-align--right {
+  text-align:right;
+}
+.text-align--center {
+  text-align:center;
+}
+.text-align--justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.full-block {
+    @extend .clear-both;
+    margin-left: 0-$gutter-width;
+    margin-right: 0-$gutter-width;
+    padding-left:$gutter-width;
+    padding-right:$gutter-width;
+    width:auto;
+}
+
+.margin-leader {
+    @include margin-leader(0.75);
+}
+.margin-trailer {
+    @include margin-trailer(0.75);
+}
+.margin-block {
+  @extend .margin-leader;
+  @extend .margin-trailer;
+}
+
+.hr {
+  @extend .clear-both;
+  height:2px;
+  background-color:#eaedee;
+  width:100%;
 }

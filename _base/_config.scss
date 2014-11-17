@@ -15,6 +15,7 @@ $zindex-page:              1000;
 $zindex-navbar-bottom:     1025;
 $zindex-navbar-top:        1050;
 $zindex-navbar:            1060;
+$zindex-tooltip:           1070;
 $zindex-loading:           2000;
 
 // Button settings
@@ -47,11 +48,23 @@ $btn-variants: (
         background:$yellow,
         border:$yellow
     ),
+    dark: (
+        color:#fff,
+        colorhover: $darkgray,
+        background:$darkgray,
+        border: $darkgray
+    ),
     dark-transparent: (
         color:#fff,
         colorhover: #fff,
         background:rgba(0, 0, 0, 0.6),
         border: rgba(0, 0, 0, 0.6)
+    ),
+    light-transparent: (
+        color:#fff,
+        colorhover: $yellow,
+        background:transparent,
+        border: #fff
     ),
     cancel: (
         color:#fff,
@@ -80,3 +93,16 @@ $switch-variants: (
         border:#ccc
     )
 );
+
+
+$padding-base-vertical:     6px;
+$padding-base-horizontal:   12px;
+
+$padding-large-vertical:    10px;
+$padding-large-horizontal:  16px;
+
+$padding-small-vertical:    5px;
+$padding-small-horizontal:  10px;
+
+$padding-xs-vertical:       1px;
+$padding-xs-horizontal:     5px;

@@ -1,8 +1,29 @@
 .reviewscore {
     background:none;
     color:$white !important;
-    display:none;
+    position:relative;
+    width:114px;
+    height:114px;
 }
 .chart-holder {
     margin:5px;
+}
+.reviewscore_rating {
+    position:absolute;
+    top:8px;
+    left:0;
+    @include type-scale(xxxlarge);
+    @include type-weight(bold);
+    text-align:center;
+    width:110px;
+}
+.reviewscore_max {
+    position:absolute;
+    top:70px;
+    left:0;
+    @include type-scale(tiny);
+    @include type-weight(bold);
+    text-align:center;
+    width:110px;
+    color:$lightgray;
 }
