@@ -68,9 +68,9 @@ $btn-variants: (
     ),
     cancel: (
         color:#fff,
-        colorhover: darken($lightblue, 5%),
-        background:$lightblue,
-        border:darken($lightblue, 5%)
+        colorhover: darken($red, 5%),
+        background:$red,
+        border:$red
     ),
     edit: (
         color:$white,

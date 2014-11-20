@@ -96,3 +96,25 @@
   background-color:#eaedee;
   width:100%;
 }
+
+//Non-bulleted list
+.plain-list {
+  list-style-type: none;
+}
+
+.quote {
+  padding:rhythm(0.9);
+  padding-left:rhythm(1.8);
+  position:relative;
+  p {
+    margin-bottom:0;
+  }
+  .icon {
+    position:absolute;
+    top:rhythm(0.9);
+    left:rhythm(0.9);
+    fill:$lightgray;
+    width:20px;
+    height:20px;
+  }
+}

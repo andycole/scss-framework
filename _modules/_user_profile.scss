@@ -1,6 +1,21 @@
+.profile-page {
+    margin-top:0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    .main {
+        padding-top:40px;
+    }
+}
+
 .user_profile-header {
 
+    z-index:1020;
+
     @include clearfix();
+
+    margin-top:20px;
+
+    position:relative;
 
     -webkit-border-top-left-radius: 3px;
     -webkit-border-top-right-radius: 3px;
@@ -9,35 +24,78 @@
 
     background-color:$lightblue;
     color:$white;
-    padding:rhythm(0.9);
+    padding:rhythm(0.45);
+
+    @include breakpoint(sm) {
+        min-height:185px;
+        padding:rhythm(0.9);
+    }
 
     .user_avatar {
-        float: left;
+        position:absolute;
+        top:rhythm(0.6);
+
         width: 100px;
+        height:100px;
+
+        @include breakpoint(sm) {        
+            width: 200px;
+            height:200px;
+            top:rhythm(0.9);
+        }
+
         margin: 0 40px 20px 0;
 
         img {
-            border-top-left-radius: 50px;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
+            width:100%;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 100px;
         }
     }
 
     .user_details {
         float: left;
         width: calc(100% - 140px);
-        margin: 0 0 20px 0;
+        margin: 0 0 0 120px;
+
+        @include breakpoint(sm) {
+            margin: 0 0 0 240px;
+        }
 
         h1 {
-            margin: 0;
+            margin: 0 0 10px 0;
+            @include type_scale(large);
+            @include breakpoint(sm) {
+                @include type_scale(xxlarge);
+            }
+            line-height:36px;
         }
 
         .meta, .location {
             margin-bottom:0;
             font-family: $sans-font-family;
         }
+        .meta {
+            @include type_scale(medium);
+            @include breakpoint(sm) {  
+                @include type_scale(large);
+            }
+        }
+        .location {
+            @include type_scale(base);
+            margin-top:5px;
+            img {
+                margin-right:5px;
+                position:relative;
+                top:2px;
+            }
+        }
     }
     .online-indicator {
+        position:relative;
+        top:5px;
         i {
             display:inline-block;
             width:10px;
@@ -45,21 +103,21 @@
             margin-left:10px;
             background-color:$red;
             border-radius:50%;
+            position:absolute;
         }
         &--is-online i {
-            background-color:lighten($limegreen,10%);  
+            background-color:lighten(saturate($limegreen,30%),10%);  
         }
     }
     .user_details--is-staff {
         @include type_weight(regular);
-        
-    }
-    
-    .user_aside_details {
-        text-align: left;
-        list-style: none;
-        padding: 0;
-        margin: 0 20px;
+        @include type_scale(base);
+
+        @include breakpoint(sm) {
+            @include type_scale(large);
+        }
+
+        color:lighten($blue, 40%);  
     }
 }
 
@@ -67,4 +125,74 @@
     margin-top:0;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
+}
+
+@include breakpoint(sm) {
+    .user_bio {
+        margin-top:50px; //account for overlapping avatar icon
+    }
+}
+
+.user_bio, .user_facts {
+    @include type_scale(small);
+    font-family: $sans-font-family;
+}
+
+.user_about {
+    border: 2px solid $greywhite;
+    border-left-width: 0;
+    border-right-width: 0;
+    padding:20px 0;
+    margin:20px 0;
+    h2 {
+        margin-bottom:rhythm(0.2);
+    }
+    p {
+        @include type_scale(small);
+        font-family: $sans-font-family;
+    }
+}
+
+.user_facts {
+    text-align: left;
+    padding: 0;
+    margin: 0 20px 20px 20px;
+    line-height:36px;
+    strong {
+        float:right;
+    }
+}
+
+.user_post-time {
+    font-family: $sans-font-family;
+    @include type_scale(small);
+    color:$lightgray;
+    width:rhythm(2);
+    display:inline-block;
+}
+
+.user_post-title {
+    font-family: $sans-font-family;
+    @include type_scale(small);
+}
+
+.user_post-content {
+    background-color:$offwhite;
+    font-family: $sans-font-family;
+    padding:rhythm(0.9);
+    margin-left:rhythm(2);
+}
+
+.user_post-quote {
+    padding:rhythm(0.9);
+    padding-left:rhythm(1.8);
+    p {
+      font-family: $sans-font-family;
+      font-style: italic;
+      @include type_scale(small);
+    }
+    .user_post-view_btn {
+        @include type_scale(small);
+        @include type_weight(bold);
+    }
 }

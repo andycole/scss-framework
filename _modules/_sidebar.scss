@@ -2,7 +2,7 @@
     @include type-scale(medium);
 }
 .footer {
-    width: $column-width + ($gutter-width * 2);
+    width: ($column-width - 1px) + ($gutter-width * 2);// -1 to account for 1px border on sidebar
     @include type-scale(xsmall);
     background-color:#f6f6f6;
     margin-left: -($gutter-width + 5); //account for 5px border on ledft of sidebar

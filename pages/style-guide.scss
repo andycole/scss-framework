@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+// Global imports
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3/hyphenation";
+
+// Base
+@import "_base/_config";
+@import "_base/_functions";
+@import "_base/_mixins";
+@import "_base/_fonts";
+@import "_base/_icons";
+@import "_base/_reset";
+@import "_base/_presets";
+
+// Layout
+@import "_layouts/_grid";
+@import "_layouts/_layout";
+
+// UI Helpers
+@import "_base/_utils";
+
+.guide-section {
+    @include clearfix();
+    float:left;
+    clear:left;
+    width:100%;
+    margin:40px 0 0 0;
+    padding:20px;
+    border-top:2px solid #ccc;
+    .btn-previews {
+        background-color:#888;
+        padding:10px;   
+        .btn {
+            width:200px;
+            float:left;
+            clear:left;
+            margin-bottom:10px;
+        }
+        .btn-load-more {
+            width:100%;
+        }
+    }
+}
