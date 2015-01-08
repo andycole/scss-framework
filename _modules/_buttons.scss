@@ -24,6 +24,9 @@
       color: $hovercolor;
       background-color: transparent;
       border-color: $border;
+      .icon {
+        fill: $hovercolor;
+      }
     }
     &:active,
     &.active {
@@ -40,6 +43,14 @@
         background-color: $background;
             border-color: $border;
       }
+    }
+
+    .icon {
+      fill: $color;
+      width:22px;
+      height:22px;
+      margin-right:5px;
+      margin-top:-1px;
     }
 
     .badge {
@@ -103,6 +114,10 @@ input.btn, button.btn {
   }
 }
 
+.btn-large {
+  @include button-size(4px, rhythm(0.9), medium, $base-line-height, $border-radius-btn)
+}
+
 // Colour Variations
 // --------------------------------------------------
 
@@ -130,6 +145,12 @@ input.btn, button.btn {
 .btn-light-transparent {
   @include button-variant("light-transparent");
 }
+.btn-full-white {
+  @include button-variant("full-white");
+}
+.btn-text {
+  @include button-variant("text");
+}
 
 
 // Button with count i.e. '(_Members: 455_)'
@@ -150,6 +171,7 @@ input.btn, button.btn {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  margin-bottom:30px;
 }
 
 // Vertically space out multiple block buttons

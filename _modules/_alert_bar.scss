@@ -1,0 +1,99 @@
+/********** Live Broadcast Bar *******/
+.header_alert {
+    width: 100%;
+    text-align: center;
+    padding:5px 0;
+    .btn {
+        margin-left:20px;
+    }
+}
+
+// Live Streaming Alert Bar
+.header_alert--live {
+    color: #fff;
+    background: #da2f3d;
+    a {
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+    .btn {
+        &:hover {
+            color:#fff;   
+            span {
+                background-color:#fff;
+            } 
+        }
+        span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #ff0000;
+            margin-right: 10px;
+            position: relative;
+            top: -1px;
+            border-radius: 90px;
+            animation: livebtn 1s;
+            -moz-animation: livebtn 1s;
+            -webkit-animation: livebtn 1s;
+            animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+        }
+    }
+}
+
+// Activation Alert Bar
+.header_alert--activate {
+    background-color: $alertBgColor;
+    color: #a0855f;
+    a {
+        color: #a0855f;
+        &:hover {
+            color: darken(#a0855f, 5%);
+        }
+    }
+}
+
+
+
+@keyframes livebtn {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Firefox */
+@-moz-keyframes livebtn {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Safari and Chrome */
+@-webkit-keyframes livebtn {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}

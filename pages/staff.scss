@@ -1,0 +1,132 @@
+// Global imports
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3/hyphenation";
+
+// Base
+@import "_base/_config";
+@import "_base/_functions";
+@import "_base/_mixins";
+
+/** Colours **/
+#colour1 span {
+  background-color: #ff256d;
+}
+#colour2 span {
+  background-color: #0094ff;
+}
+#colour3 span {
+  background-color: #8128ff;
+}
+#colour4 span {
+  background-color: #e92a2a;
+}
+#colour5 span {
+  background-color: #0a3a86;
+}
+#colour6 span {
+  background-color: #00aa86;
+}
+#colour7 span {
+  background-color: #fff94b;
+}
+#colour8 span {
+  background-color: #ff7919;
+}
+#colour9 span {
+  background-color: #a3d899;
+}
+#colour10 span {
+  background-color: #b0b0ed;
+}
+
+.staff-member {
+  margin-bottom: 60px;
+  display: block;
+  position: relative;
+  float: left;
+  clear:left;
+  z-index: 7777;
+  padding-left:200px;
+}
+
+.staff-member_name {
+  h2 {
+    float:left;
+    a {
+      color:$headlineColor;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  a {
+    float:left;
+    display:inline-block;
+    margin-right:20px;
+    .icon {
+      fill: $blue;
+    }
+  }
+  h3 {
+    float:right;
+    color:$lightgray;
+  }
+}
+
+.staff-member_pic {
+  width: 170px;
+  height: 170px;
+  float:left;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 9999;
+  img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width:150px;
+    height:150px;
+  }
+}
+
+.staff-member_pic--hover {
+  display:none;
+}
+
+path {
+  stroke-width: 3px;
+}
+
+#toolTip {
+  background-color: rgba(51, 51, 51, 0.5) !important;
+  span {
+    border-top: 4px solid rgba(51, 51, 51, 0.5) !important;
+  }
+}
+
+.staff-page_legend {
+  background-color: #f8f8f8;
+  display: block;
+  padding: 20px;
+  margin-bottom: 40px;
+  ul {  
+    float:left;
+    clear:left;
+    li {
+      color: #a1a1a1;
+      float: left;
+      margin-bottom: 5px;
+      margin-right: 50px;
+      font-size:14px;
+      span {
+        float: left;
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin-top:11px;
+        margin-right: 9px;
+      }
+    }
+  }
+}

@@ -94,7 +94,8 @@ html, body, form, input, select, label, textarea, legend, table, td, th, h1, h2,
  */
 
 a:focus {
-    outline: thin dotted;
+    //outline: thin dotted;
+    outline: 0;
 }
 
 /**
@@ -375,6 +376,9 @@ button,
 input {
     line-height: normal;
 }
+input::-moz-focus-inner { 
+  border: 0; 
+}
 
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
@@ -516,4 +520,8 @@ iframe {
 
 iframe html {
     overflow: hidden;
+}
+
+object, embed { 
+  outline: 0;
 }

@@ -82,6 +82,13 @@
             span {
               color:#edb21e;
             }
+            @include breakpoint(md) {
+                @include type-scale(base);
+                padding: 15px;
+            }
+            @include breakpoint(hg) {
+                @include type-scale(large);
+            }
         }
         .topspot__details {
             float: left;

@@ -1,0 +1,17 @@
+.inline_alert {
+    display:inline-block;
+    padding:1px 4px;
+    border-radius:2px;
+    @include type_scale(tiny);
+    height:18px;
+    text-align:center;
+    margin:0 4px;
+    position:relative;
+    top:-2px;
+
+    &-red {
+        background-color:$red;
+        color:#fff;
+    }
+    
+}

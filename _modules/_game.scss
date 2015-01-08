@@ -34,10 +34,21 @@
         margin: 0 0 0 0;
         color:$white;
 
+        @include breakpoint(md) {
+            margin-right:350px
+        }
+        @include breakpoint(lg) {
+            margin-right:0;
+        }
+
         h1 {
             margin: 0;
             line-height:$base-line-height;
             margin-bottom:14px;
+            @include type_scale(large);
+            @include breakpoint(lg) {
+                @include type_scale(xxlarge);
+            }
         }
 
         h3 {
@@ -61,14 +72,34 @@
 
 .game_maincolumn {
     margin-top:rhythm(0.45);
-    width:calc(60% - #{$gutter-width});
+    width:100%;
     float:left;
+    @include breakpoint(md) {
+        width:calc(60% - #{$gutter-width});
+    }
     margin-right:$gutter-width;
+    .block-heading {
+        @include type-scale(medium);
+        @include breakpoint(md) {
+            @include type-scale(large);    
+        }
+    }
 }
 .game_subcolumn {
     margin-top:rhythm(0.45);
-    width:40%;
+    width:100%;
+    clear:left;
+    @include breakpoint(md) {
+        width:40%;
+        clear:none;
+    }
     float:left;
+    .block-heading {
+        @include type-scale(medium);
+        @include breakpoint(md) {
+            @include type-scale(large);    
+        }
+    }
 }
 
 .screenshots_list {

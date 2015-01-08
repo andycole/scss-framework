@@ -100,6 +100,15 @@
 //Non-bulleted list
 .plain-list {
   list-style-type: none;
+  ul, ol {
+    list-style-type:none;
+  }
+}
+
+.nav {
+  @extend .plain-list;
+  padding:0;
+  margin:0;
 }
 
 .quote {
@@ -117,4 +126,56 @@
     width:20px;
     height:20px;
   }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.paragraph_list {
+  @extend p;
+  margin-left:40px;
+}
+
+.user-avatar {
+    width: 40px;
+    border-radius: 30px 2px 30px 30px;
+    vertical-align: middle;
+}
+
+/*.paralax_block-main {
+    background: #000 url("../img/wrap2.jpg") center top no-repeat;
+}*/
+
+span.placeholder{
+    position:absolute;
+    z-index:1;
+    cursor:text;
+}
+
+span.placeholder-hide-except-screenreader {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+span.placeholder-hide{
+  display:none;
+}
+
+/* overwrite for the HTML5 Boilerplate way to hide labels */
+label.visuallyhidden-with-placeholder{
+    height:auto !important;
+    overflow: visible !important;
+    position:absolute !important;
+    left:-999em;
 }

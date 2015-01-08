@@ -1,0 +1,52 @@
+.mentioned-game-aside {
+    //margin-bottom: rhythm(0.9);
+}
+
+.mentioned-game_item {
+    margin-bottom: rhythm(0.9);
+    h3 {
+        margin-bottom:0px;
+        a {
+            color:$darkgray;
+            &:hover {
+                color:$black;
+            }
+        }
+    }
+    .mentioned-game_platform-meta {
+        @include type-scale(small);
+        margin-bottom:5px;
+    }
+
+    .mentioned-game_body {
+        padding:15px 0 10px 0;
+        overflow:hidden;
+        clear:both;
+        border-top:2px solid #ddd;
+        border-bottom:1px solid #ddd;
+        margin-bottom:10px;
+    }
+
+    .mentioned-game_boxshot {
+        float:left;
+        width: 100px;
+        margin-right:15px;
+        img {
+            width:100%;
+            max-width:100%;
+        }
+    }
+
+    .mentioned-game_description {
+        @include type-scale(small);
+    }
+
+    .mentioned-game_release {
+        @include type-scale(small);
+        clear:both;
+    }
+
+    .btn-dark {
+        margin-top:10px;
+    }
+}

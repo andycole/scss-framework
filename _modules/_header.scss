@@ -3,7 +3,7 @@ $header-height: 40px;
 $header-border-bottom: 1px;
 
 $header-height-md: 70px;
-$header-border-bottom-md: 4px;
+$header-border-bottom-md: 6px;
 
 // set line height minus border bottom height
 $header-line-height: $header-height - $header-border-bottom;
@@ -14,7 +14,7 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
 }*/
 
 .header_width_container {
-    max-width:100%;
+    @extend .page_width_container;
     padding:40px 0 0 0;
     position:relative;
     @include breakpoint(md) {
@@ -26,35 +26,21 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
     @include breakpoint(md) {
         border-bottom:$header-border-bottom-md solid $lightblue;
     }
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
     .header_top {
         min-height:40px;
         border-bottom:$header-border-bottom solid #222;
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
         background-color: rgba(#2b2e2e, 0.8);
         background-image: linear-gradient(0deg, rgba(#2b2e2e, 0.8) 0%, lighten(rgba(#2b2e2e, 0.8), 5%) 28%, lighten(rgba(#2b2e2e, 0.8), 5%) 100%);
         @include breakpoint(md) {
             height:$header-line-height-md;
-        }
-        ul {
-
-            li {
-
-                img {
-
-                }
-
-                a, a:active {
-
-            
-                }
-            }
         }
 
         .logo {
             position:absolute;
             top:0;
             left:calc(50% - 140px/2);
-            padding:12px 0 10px 0;
+            padding:12px 10px 10px 10px;
             h1 {
                 background: url("../img/logo/logo-horizontal-white-no-tld-.svg") 0 0 no-repeat;
                 width:140px;
@@ -67,12 +53,15 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
                 }
             }
             @include breakpoint(md) {
-                left:20px;
-                padding:20px 0;
+                left:0px;
+                padding:20px 20px;
                 h1 {
                     width:218px;
                     height:25px;
                 }
+            }
+            &:hover {
+                background-color:rgba(0,0,0,0.2);
             }
         }
 
@@ -117,18 +106,19 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
             @include breakpoint(md) {
                 position:absolute;
                 top:0;
-                left:278px;
+                left:258px;
+                width:auto;
                 background-color:none;
                 li {
                     width:auto;
-                    margin: 0 15px 0 0;
+                    margin: 0;
                     a, span {
                         display:block;
                         height:$header-height-md;
                         color:#fff;
-                        padding:0 20px;
-                        @include type-scale(base);
+                        @include type-scale(xsmall);
                         line-height: $header-line-height-md;
+                        padding:0 10px;
                         .icon {
                             display:none;
                         }
@@ -137,12 +127,19 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
                             color:$yellow;
                         }
                     }
-                    span {
-                        display:none;
-                    }
                     .navigation_extended {
                         margin:0;
                         padding:0;
+                    }
+                }
+            }
+            @include breakpoint(hg) {
+                li {
+                    margin: 0 5px 0 0;
+                    a, span {
+                        @include type-scale(small);
+                        line-height: $header-line-height-md;
+                        padding:0 20px;
                     }
                 }
             }
@@ -153,11 +150,14 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
             padding:10px;
             background-image: linear-gradient(0deg, rgba(167, 167, 167, 0.2) 0%,rgba(194, 194, 194, 0.2) 28%,rgba(224, 224, 224, 0.2) 100%);
             @include breakpoint(md) {
-                width:200px;
                 padding:0;
                 float:right;
                 border-left:1px solid rgba($white, 0.1);
-                border-right:1px solid rgba($white, 0.1)
+                width:155px;
+                border-right:1px solid rgba($white, 0.1);
+            }
+            @include breakpoint(lg) {
+                width:200px;
             }
             input {
                 width:100%;
@@ -192,7 +192,7 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
                     color:darken($white,30%);
                 }
                 @include breakpoint(md) {
-                    padding:17px 50px 17px 25px;
+                    padding:17px 45px 17px 15px;
                     background-color:transparent;
                     height:$header-line-height-md;
                     line-height:$header-line-height-md - 17px -17px;
@@ -202,6 +202,13 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
                     &:focus {
                         background-color:rgba(0,0,0,0.1);
                     }
+                    @include type-scale(xsmall);
+                    font-weight:normal;
+                } 
+                @include breakpoint(lg) {
+                    padding:17px 50px 17px 25px;
+                    @include type-scale(small);
+                    font-weight:bold;    
                 }
             }
             button {
@@ -255,26 +262,22 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
                 a {
                     .avatar-placeholder {
                         .icon {
-                            fill: #888;
+                            fill: #fff;
                             width: 30px;
                             height: 30px;
                             vertical-align: top;
-                            margin: 4px 5px;
+                            margin: 5px;
                             @include breakpoint(md) {
-                                margin:(($header-line-height-md - 30px)/2)-2px 15px;
+                                margin:17px 10px 17px 15px;
                             }
-                        }
-                    }
-                    &:hover {
-                        .icon {
-                            fill: lighten(#888,10%);
                         }
                     }
                 }         
             }
             .login-header {
                 @include clearfix();
-                a {
+                .dd-menu {
+                    display:none;
                     width:40px;
                     height:40px;
                     display:block;
@@ -287,9 +290,12 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
                         height:$header-height-md;
                         background-color: transparent;
                         color:#fff;
-                        padding:0 20px 0 0;
+                        padding:0;
                         @include type-scale(base);
                         line-height:$header-line-height-md;
+                        .visible-inline-lg {
+                            padding-right:15px;
+                        }
                         &:hover {
                             background-color:rgba(0,0,0,0.2);
                             color:$yellow;
@@ -298,194 +304,7 @@ $header-line-height-md: $header-height-md - $header-border-bottom-md;
                     }
                 }
             }
-            .login-dropdown {
-                display:none;
 
-                h4 {
-
-                }
-
-                .textfield {
-
-                }
-                .btn {
-
-                }
-                .btn-primary-light {
-
-                }
-                .form-bottom {
-
-                }
-                .form-forgot {
-
-                    &:hover {                    
-
-                    }
-                }
-                .checkbox {
-
-                }
-            }
-
-            .user-avatar {
-
-                img {
-
-                }
-
-            }
-            .user-menu-icon {
-
-            }
-        }
-
-    }
-}
-/*
-
-$header-top-height: 70px;
-$header-bottom-height: 45px;
-
-.header--is-fixed {
-    padding-top:$header-top-height + 10px;
-}
-.header--subnav-active {
-    padding-top:$header-top-height + $header-bottom-height;
-}
-
-#header {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index: $zindex-navbar;
-    .header_top {
-        position:relative;
-        z-index: $zindex-navbar-top;
-        background-color: rgba(#2b2e2e, 0.8);
-        background-image: linear-gradient(0deg, rgba(#2b2e2e, 0.8) 0%, lighten(rgba(#2b2e2e, 0.8), 5%) 28%, lighten(rgba(#2b2e2e, 0.8), 5%) 100%);
-        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
-        height: $header-height;
-        line-height: $header-line-height; // set line height minus border bottom height
-        margin: 0;
-        border-bottom:$header-border-bottom solid $lightblue;
-
-        ul {
-            margin: 0 0 0 25px;
-            padding: 0;
-            li {
-                float: left;
-                margin: 0 0 0 15px;
-                @include type-scale(small);
-                line-height:$header-height;
-
-                img {
-                    vertical-align: middle;
-                }
-
-                a, a:active {
-                    padding:0 15px;
-                    color: $white;
-                    text-decoration: none;
-                    display:block;
-                }
-                a:hover {
-                    color: $yellow;
-                    text-decoration: none;
-                    background-color:rgba(0,0,0,0.2);
-                    transition: color 0.5s 
-                }
-            }
-        }
-
-        .header_search {
-            width:200px;
-            position:relative;
-            input {
-                width:100%;
-                display:block;
-                padding:17px 50px 17px 25px;
-                @include type-scale(small);
-                @include type-weight(bold);
-                border:0;
-                background-color:transparent;
-                height:$header-line-height;
-                color:$offwhite;
-                &:focus {
-                    outline:none;
-                    background-color:rgba(0,0,0,0.2);
-                }
-                &::-webkit-input-placeholder { // WebKit browsers
-                    opacity:1;
-                    color:darken($white,30%);
-                }
-                &:-moz-placeholder { // Mozilla Firefox 4 to 18
-                    opacity:1;
-                    color:darken($white,30%);
-                }
-                &::-moz-placeholder { // Mozilla Firefox 19+
-                    opacity:1;
-                    color:darken($white,30%);
-                }
-                &:-ms-input-placeholder {
-                    opacity:1;
-                    color:darken($white,30%);
-                }
-            }
-            border-left:1px solid rgba($white, 0.1);
-            border-right:1px solid rgba($white, 0.1);
-            button {
-                position:absolute;
-                height:$header-line-height;
-                width:50px;
-                background:none;
-                border:none;
-                top:0px;
-                right:0;
-                &:focus {
-                    outline:none;
-                }
-                .icon {
-                    fill:$yellow;
-                    width:22px;
-                    height:22px;
-                }
-            }
-        }
-
-        .header_user-menu {
-            margin-left:0;
-            li {
-                margin-left:0;   
-                position:relative;
-                a {
-                    display:block;
-                    padding:0 15px;
-                }         
-                .avatar-placeholder {
-                    display:block;
-                    float:left;
-                    margin: 10px 15px 0 0;
-                    width:36px;
-                    height:36px;
-                    background-color:#777;
-                    padding:0;
-                    -webkit-border-radius: 30px 2px 30px 30px;
-                    border-radius: 30px 2px 30px 30px;
-                    .icon {
-                        fill: #999;
-                        width:25px;
-                        height:25px;
-                        vertical-align:top;
-                        margin:4px 6px;
-                    }
-                }
-            }
-            .login-header {
-                @include clearfix();
-                position:relative;
-            }
             .login-dropdown {
                 display:none;
                 position: absolute;
@@ -496,7 +315,12 @@ $header-bottom-height: 45px;
                 padding:25px;
                 box-shadow:0px 0px 4px rgba(0,0,0,0.4);
                 border-radius:0 0 3px 3px;
-                width:420px;
+                width:300px;
+                @include breakpoint(md) {
+                    width:420px;
+                }
+
+                z-index:$zindex-dropmenu;
 
                 h4 {
                     margin:0;
@@ -516,42 +340,175 @@ $header-bottom-height: 45px;
                 .btn-primary-light {
                     margin-bottom:15px;
                 }
+                .form-action {
+                    padding:15px 0 10px 0;
+                    @include clearfix();
+                }
                 .form-bottom {
                     clear:right;
                     width:100%;
                     border-top:2px solid $greywhite;
-                    padding-top:15px;
+                    padding:25px 0 0 0;
                 }
                 .form-forgot {
                     clear:left;
                     float:left;
-                    padding:0;
-                    line-height:3;
-                    color:$blue;
-                    &:hover {
-                        color:darken($blue,5%);
-                    }
+                    width:auto;
+                    padding-left:0;
+                    padding-right:0;
                 }
                 .checkbox {
                     line-height: $base-line-height;
                 }
             }
 
-            .user-avatar {
-                display:block;
+            .user-dd-menu {
                 float:left;
-                padding:0;
-                margin-left:15px;
-                img {
-                    width:40px;
-                    -webkit-border-radius: 30px 2px 30px 30px;
-                    border-radius: 30px 2px 30px 30px;
+                color:#fff;
+                @include breakpoint(md) {
+                    line-height:66px;
+                    height:66px;
+                    padding-right:40px;
+                    padding: 0 30px 0 80px;
+                    position: relative;
+                }
+                .user-dd-menu_name {
+                    display:none;
+                    @include breakpoint(md) {
+                        display:block;
+                    }
+                }
+                &:hover {
+                    color:$offwhite;
+                    .user-dd-menu_name {
+                        color:$yellow;
+                    }
                 }
             }
-            .user-menu-icon {
 
+            .user-avatar {
+                float:left;
+                background-color:$lightblue;
+                border-radius:0;
+                @include breakpoint(md) {
+                    position:absolute;
+                    left:0px;
+                    background-color:#888;
+                    width: 44px;
+                    height:44px;
+                    margin:12px 15px 0 15px;
+                    border-radius: 30px 2px 30px 30px;
+                }
+                &:hover {
+                    background-color:#fff;
+                    .icon {
+                        fill: $lightblue;
+                    }
+                }
+                .avatar-placeholder .icon {
+                    margin:6px 8px;
+                }
             }
+            .user-dropdown {
+                @extend .login-dropdown;
+                width:200px;
+                @include type_scale(small);
+                .user-menu-bottom {
+                    padding-top:30px;
+                    li {
+                        a {
+                           color: $midgray;
+                           font-weight:bold; 
+                           &:hover {
+                                color:$darkgray;
+                                .icon {
+                                    fill:$darkgray;
+                                }
+                           }
+                        }
+                        .icon {
+                            width:20px;
+                            height:20px;
+                            margin-right:4px;
+                            fill:$midgray;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: rgba(0,0,0,0.2);
+                .user-avatar {
+                    background-color:#fff;
+                    .icon {
+                        fill: $lightblue;
+                    }
+                }
+            }
+
         }
 
     }
-}*/
+}
+
+#rwdMenuModal {
+  padding-right:0 !important;
+  .modal-dialog {
+    width: 100%;
+    height: calc(100% - 48px);
+    padding: 0;
+    margin:0;
+  }
+
+  .modal-header {
+    border-bottom:0;
+    padding:0;
+    min-height:34px;
+    .close {
+        padding:0;
+    }
+  }
+
+  .modal-content {
+    height: 100%;
+    border-radius:0;
+    border:0;
+    overflow-y:scroll;
+    .modal-body {
+        margin:0;
+        .responsive-menu {
+            padding:10px auto;
+            .responsive-menu_heading {
+                @extend .block-heading;
+                margin-bottom:10px;
+                padding:5px 20px;
+                @include type_scale(small);
+            }
+            li {
+                display:block;
+                width:100%;
+                @include type_scale(medium);
+                margin-bottom:10px;
+                a {
+                    color:$black;
+                    &:hover {
+                        color:$linkColorHover;
+                    }
+                }
+                ul {
+                    @extend .plain-list;
+                    padding-left:20px;
+                    margin-bottom:10px;
+                }
+            }
+        }
+    }
+    ul {
+      margin:0;
+    }
+  }
+  .modal-footer {
+    border-top:0;
+    display:none;
+  }
+}

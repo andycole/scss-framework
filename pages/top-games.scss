@@ -1,0 +1,22 @@
+// Global imports
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3/hyphenation";
+
+// Base
+@import "_base/_config";
+@import "_base/_functions";
+@import "_base/_mixins";
+
+.top_games {
+}
+
+.top-game_intro p {
+    @include type_scale(base);
+}
+
+.top-games_rank {
+    float:left;
+    margin-right:20px;
+    color:$lightgray;
+    @include type_scale(xxlarge);
+}

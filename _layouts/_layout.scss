@@ -18,7 +18,6 @@
     padding-bottom:50px;
     
     position:relative;
-    z-index:$zindex-page;
     margin: 20px auto;
     background: $white;
     border-radius: 3px;
@@ -61,18 +60,16 @@
                     padding-right:$gutter-width;
                 }
                 @include breakpoint(lg) {
-                    @include column($total-columns - 1, true, false);
+                    @include column($total-columns - 1, true, false, -5);
+                    width:calc(100% - #{$gutter-width + $column-width + $gutter-width + 5});
                     padding-right: $gutter-width;
                     padding-left: $gutter-width;
                 }
 
             }
             .sidebar {
+                @include column(1, true, true , 5px);
                 display:none;
-                @include column(1, true, true);
-                @include breakpoint(md) {
-                    display:block;
-                }
                 @include breakpoint(lg) {
                     display:block;
                 }
@@ -87,13 +84,41 @@
                 display:none;
                 @include breakpoint(md) {
                     display:block;
-                    @include column(1, true, true);
+                    @include column(1, true, true, 5px);
                     border-right:5px solid $offwhite;
                 }
+            }
+            .main {
+                width:100%;
+                padding-right:15px;
+                padding-left:15px;
+                @include breakpoint(md) {
+                    width:calc(100% - #{$gutter-width});
+                    padding-left: $gutter-width;
+                    padding-right:$gutter-width;
+                }
                 @include breakpoint(lg) {
-                    @include column(1, true, true);
-                    border-right:5px solid $offwhite;
+                    @include column($total-columns - 1, true, false, -5);
+                    width:calc(100% - #{$gutter-width + $column-width + $gutter-width + 5});
+                    padding-right: $gutter-width;
+                    padding-left: $gutter-width;
+                }
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+    }
+    // 2 column Layout - User profile
+    &.l-2column-sidebar-profile {
+        .container {
+            .aside {
+                display:none;
+                @include breakpoint(md) {
                     display:block;
+                    @include column(1, true, true);
+                    background-color:$offwhite;
+                    border-right:5px solid #E5E5E5;
                 }
             }
             .main {
@@ -116,23 +141,6 @@
             }
         }
     }
-    // 2 column Layout - User profile
-    &.l-2column-sidebar-profile {
-        .container {
-            .aside {
-                @include column(1, true, true);
-                background-color:$offwhite;
-                border-right:1px solid #E5E5E5;
-            }
-            .main {
-                @include column($total-columns - 1, true, false);
-                padding-left: $gutter-width;
-            }
-            .sidebar {
-                display: none;
-            }
-        }
-    }
 
     // Full width - no sidebars
     &.l-fullwidth {
@@ -142,6 +150,27 @@
             }
             .main {
                 width:100%;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+    }
+
+    &.l-slim {
+        .container {
+            width:90%;
+            margin:20px 5%;
+            @include breakpoint(md) {
+                width: $column-width * 2;
+                margin: rhythm(0.9) auto;
+            }
+            padding:40px $gutter-width;
+            .aside {
+                display:none;
+            }
+            .main {
+                padding:0
             }
             .sidebar {
                 display: none;

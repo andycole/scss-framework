@@ -1,0 +1,66 @@
+$select-height: 42px;
+
+$arrow-height:6px;
+
+$arrow-position: ($select-height / 2) - ($arrow-height - 1);
+
+.form-select {
+    cursor:pointer;
+    position:relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    @include clearfix();
+}
+.form-select div.form-control {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    @include type-scale(base);
+    line-height:$select-height;
+    height:$select-height;
+}
+.form-select div.form-control:after {
+    content:"";
+    width:0;
+    height:0;
+    border:$arrow-height solid transparent;
+    border-color:black transparent transparent transparent;
+    position:absolute;
+    top:$arrow-position;
+    right:10px;
+}
+.form-select .form-control:active, .form-select .form-control.active {
+    background-color:#eee;
+}
+.options {
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    z-index:999;
+    margin:0 0;
+    padding:0 0;
+    list-style:none;
+    border:1px solid #ccc;
+    background-color:white;
+    -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.options li {
+    padding:0 6px;
+    margin:0 0;
+    padding:0 10px;
+    @include type-scale(base);
+}
+.options li:hover {
+    background-color:$blue;
+    color:white;
+}

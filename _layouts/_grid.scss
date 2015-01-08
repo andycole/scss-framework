@@ -8,14 +8,8 @@ $gutter-width: 40px;
 $total-columns: 4;
 $total-gutters: $total-columns + 1;
 
-// Go go magic width calculator!
-// DON'T EVER TOUCH THIS YOU MONG.
-@function gridsystem-width($total-columns) {
-    @return ($column-width * $total-columns) + ($gutter-width * $total-gutters);
-}
-
 // Set $total-width to 100% for a fluid layout
-$total-width: gridsystem-width($total-columns);
+$total-width: ($column-width * $total-columns) + ($gutter-width * $total-gutters);
 
 
 body {
@@ -24,7 +18,7 @@ body {
 }
 
 
-@mixin column($columnspan, $leftgutter: false, $rightgutter: false) {
+@mixin column($columnspan, $leftgutter: false, $rightgutter: false, $widthmodifier: false) {
     $gutterspan: $columnspan - 1;
     display: inline;
     float: left;
@@ -37,5 +31,9 @@ body {
         padding-right: $gutter-width;
         $width: $width + $gutter-width;
     }
-    width: $width;
+    @if $widthmodifier {
+        width: $width + $widthmodifier;
+    } @else {
+        width: $width;
+    }
 }

@@ -26,6 +26,15 @@
                 width:240px;
             }
 
+            &.content_image_boxart {
+                width:120px;
+            }
+
+            &.content_image_avatar {
+                width:120px;
+                margin-top:10px;
+            }
+            
             img {
                 width:100%;
                 max-width: 100%;
@@ -54,6 +63,7 @@
                 bottom:10px;
             }
         }
+
 
         .content_details {
             overflow:hidden;

@@ -1,9 +1,18 @@
-.profile-page {
+.profile-page, .inbox-page, .settings-page {
     margin-top:0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     .main {
         padding-top:40px;
+    }
+
+    @include breakpoint(sm) {
+        .aside_contents {
+            padding-top:20px; //account for overlapping avatar icon
+        }
+    }
+    .btn-compose {
+        margin-top:5px;
     }
 }
 
@@ -127,12 +136,6 @@
     border-top-left-radius: 0;
 }
 
-@include breakpoint(sm) {
-    .user_bio {
-        margin-top:50px; //account for overlapping avatar icon
-    }
-}
-
 .user_bio, .user_facts {
     @include type_scale(small);
     font-family: $sans-font-family;
@@ -194,5 +197,58 @@
     .user_post-view_btn {
         @include type_scale(small);
         @include type_weight(bold);
+    }
+}
+
+.signature-preview {
+    min-height:160px;
+    padding:10px;
+    color: $input-color;
+    background-color: $input-bg;
+    border: 2px solid $input-border;
+    border-radius: $input-border-radius-base;
+}
+.form-section form {
+    margin-bottom:80px;
+}
+.form-control-file {
+        padding-top:4px;
+        @include type_scale(base);
+}
+
+.form-section table {
+    @include type_scale(base);
+}
+
+
+.inbox {
+    @include type_scale(base);
+    th {
+        color:$midgray;
+    }
+}
+.inbox-highlight {
+    td:first-child {
+        border-left:3px solid lighten($red,10%);
+    }
+    td {
+        background-color:lighten(#f9ebc3,5%)!important;// Row must always be highlight colour
+    }
+}
+
+.inbox-controls {
+    a {
+        cursor:pointer;
+        margin-right:5px;
+        .icon {
+            opacity:0.6;
+            width:26px;
+            height:26px;
+        }
+        &:hover, &.inbox-unread {
+            .icon {
+                opacity:1;
+            }
+        }
     }
 }
