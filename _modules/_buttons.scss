@@ -12,7 +12,7 @@
     $background: map-fetch($map, $button background);
     $border: map-fetch($map, $button border);
     $hovercolor: map-fetch($map, $button colorhover);
-    
+
     color: $color;
     background-color: $background;
     border-color: $border;
@@ -243,4 +243,35 @@ input[type="button"] {
       font-style: normal;
     }
   }
+}
+
+.rounded_icon {
+    float:left;
+    border-radius:45px;
+    background-color:#ccc;
+    display:block;
+    width:50px;
+    height:50px;
+    line-height: 48px;
+    padding-left: 10px;
+    margin-right:10px;
+    .icon {
+        height:30px;
+        width:30px;
+        fill:#fff;
+    }
+}
+
+.square_icon {
+    float:left;
+    background-color:#ccc;
+    display:block;
+    width:50px;
+    height:50px;
+    line-height: 48px;
+    .icon {
+        height:30px;
+        width:30px;
+        fill:#fff;
+    }
 }

@@ -9,7 +9,10 @@
 
     .content_item {
         @include clearfix();
-        padding: rhythm(0.45) 0;
+        padding: 0 0 rhythm(0.45) 0;
+        @include breakpoint(md) {
+            padding-top: rhythm(0.45);
+        }
         border-bottom: rhythm(0.1) solid $offwhite;
         &:last-child {
             padding: rhythm(0.45) 0 rhythm(0.55) 0;
@@ -17,10 +20,14 @@
         }
 
         .content_image {
-            width:120px;
+            width:100%;
             position: relative;
-            float: left;
             margin: 0 rhythm(0.9) 0 0;
+
+            @include breakpoint(sm) {
+                width:120px;
+                float: left;
+            }
 
             @include breakpoint(md) {
                 width:240px;

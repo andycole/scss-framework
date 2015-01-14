@@ -1,5 +1,9 @@
-.paralax_block-main {
-    overflow:hidden;
+.page_skin {
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
 }
 
 .page_width_container {
@@ -12,17 +16,18 @@
 }
 
 .container {
-    
     @extend .page_width_container;
 
     padding-bottom:50px;
-    
     position:relative;
     margin: 20px auto;
     background: $white;
-    border-radius: 3px;
     overflow: auto;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3); 
+
+    @include breakpoint(hg) {
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 3px;
+    }
 
     .main {
         padding-top: rhythm(0.45);
@@ -160,12 +165,13 @@
     &.l-slim {
         .container {
             width:90%;
-            margin:20px 5%;
+            margin:20px auto;
+            padding:20px;
             @include breakpoint(md) {
+                padding:40px $gutter-width;
                 width: $column-width * 2;
                 margin: rhythm(0.9) auto;
             }
-            padding:40px $gutter-width;
             .aside {
                 display:none;
             }
