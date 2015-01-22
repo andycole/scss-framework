@@ -2,7 +2,7 @@
 
 body {
     background-color:$bodyBackground;
-    font-family: $base-font-family;
+    @include set-font();
     font-weight: 400;
     color: $darkgray;
     overflow-x:hidden;
@@ -10,7 +10,7 @@ body {
 
 // Headings
 #{h1, h2, h3, h4, h5} {
-    font-family: $base-font-family;
+    @include set-font();
     margin-top: 0;
     @include type-weight(black);
     @include margin-trailer(0.5);
@@ -39,7 +39,7 @@ p {
     @include word-break(break-word);
     @include hyphens(auto);
     @include type-ligatures;
-    font-family: $serif-font-family;
+    @include set-font(serif);
 }
 
 // Small
@@ -56,13 +56,12 @@ a {
     }
 }
 
-
 // Text highlights
 ::selection {
-  background: $textHighlightColor; /* WebKit/Blink Browsers */
+  background: $textHighlightColor; // WebKit/Blink Browsers
   color: #fff;
 }
 ::-moz-selection {
-  background: $textHighlightColor; /* Gecko Browsers */
+  background: $textHighlightColor; // Gecko Browsers
   color: #fff;
 }

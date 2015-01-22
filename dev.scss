@@ -5,14 +5,12 @@
 // Base
 @import "_base/_config";
 @import "_base/_functions";
-@import "_base/_mixins";
+@import "_base/_mixins/_utils";
 
 
 //Displays vertical rhythm gridlines on any element container
 .showgrid {
     background-color: $white;
-    background-image: -webkit-linear-gradient(top,rgba(51,51,51,.247059)0,rgba(51,51,51,.247059)1px,rgba(255,255,255,0)1px,rgba(255,255,255,0)2px);
-    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0px,rgba(51,51,51,.247059)),color-stop(1px,rgba(51,51,51,.247059)),color-stop(1px,rgba(255,255,255,0)),color-stop(2px,rgba(255,255,255,0)));
     background-image: linear-gradient(to bottom,rgba(51,51,51,.247059)0,rgba(51,51,51,.247059)1px,rgba(255,255,255,0)1px,rgba(255,255,255,0)2px);
     background-size: 100% $base-line-height;
 }
@@ -42,19 +40,19 @@
   div {
     display:none;
   }
-  .rwd_indicator--xs {  
+  .rwd_indicator--xs {
     display:block;
     @include breakpoint(sm) {display:none;}
   }
-  .rwd_indicator--sm {  
+  .rwd_indicator--sm {
     @include breakpoint(sm) {display:block;}
     @include breakpoint(md) {display:none;}
   }
-  .rwd_indicator--md {  
+  .rwd_indicator--md {
     @include breakpoint(md) {display:block;}
     @include breakpoint(lg) {display:none;}
   }
-  .rwd_indicator--lg {  
+  .rwd_indicator--lg {
     @include breakpoint(lg) {
       display:block;
     }

@@ -17,7 +17,7 @@
         }
         .comment-body {
             @include type_scale(small);
-            font-family: $serif-font-family;
+            @include set-font(serif);
         }
         .user-avatar {
             position:absolute;

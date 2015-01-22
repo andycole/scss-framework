@@ -1,9 +1,13 @@
 // Type settings
 // --------------------------------------------------
 
-$sans-font-family:            "Droid Sans", sans-serif;
-$serif-font-family:           "Noto Serif", "Georgia", serif;
-$mono-font-family:            "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+$sans-font-family:          sans-serif;
+$serif-font-family:         "Georgia", serif;
+$mono-font-family:          Menlo, Courier New, Courier, Mono, monospace;
+
+$webfont-sans-font-family:  "Droid Sans", sans-serif;
+$webfont-serif-font-family: "Noto Serif", "Georgia", serif;
+$webfont-mono-font-family:  "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
 
 $base-font-family:            $sans-font-family;
 

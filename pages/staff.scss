@@ -1,13 +1,8 @@
-// Global imports
-@import "compass/typography/vertical_rhythm";
-@import "compass/css3/hyphenation";
-
 // Base
 @import "_base/_config";
-@import "_base/_functions";
-@import "_base/_mixins";
 
-/** Colours **/
+// Colours
+// --------------------------------------------------
 #colour1 span {
   background-color: #ff256d;
 }
@@ -110,7 +105,7 @@ path {
   display: block;
   padding: 20px;
   margin-bottom: 40px;
-  ul {  
+  ul {
     float:left;
     clear:left;
     li {

@@ -17,17 +17,10 @@
 }
 
 .user_profile-header {
-
-    z-index:1020;
-
     @include clearfix();
-
+    z-index:1020;
     margin-top:20px;
-
     position:relative;
-
-    -webkit-border-top-left-radius: 3px;
-    -webkit-border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 
@@ -47,7 +40,7 @@
         width: 100px;
         height:100px;
 
-        @include breakpoint(sm) {        
+        @include breakpoint(sm) {
             width: 200px;
             height:200px;
             top:rhythm(0.9);
@@ -84,11 +77,11 @@
 
         .meta, .location {
             margin-bottom:0;
-            font-family: $sans-font-family;
+            @include set-font();
         }
         .meta {
             @include type_scale(medium);
-            @include breakpoint(sm) {  
+            @include breakpoint(sm) {
                 @include type_scale(large);
             }
         }
@@ -115,7 +108,7 @@
             position:absolute;
         }
         &--is-online i {
-            background-color:lighten(saturate($limegreen,30%),10%);  
+            background-color:lighten(saturate($limegreen,30%),10%);
         }
     }
     .user_details--is-staff {
@@ -126,7 +119,7 @@
             @include type_scale(large);
         }
 
-        color:lighten($blue, 40%);  
+        color:lighten($blue, 40%);
     }
 }
 
@@ -138,7 +131,7 @@
 
 .user_bio, .user_facts {
     @include type_scale(small);
-    font-family: $sans-font-family;
+    @include set-font();
 }
 
 .user_about {
@@ -152,7 +145,7 @@
     }
     p {
         @include type_scale(small);
-        font-family: $sans-font-family;
+        @include set-font();
     }
 }
 
@@ -167,7 +160,7 @@
 }
 
 .user_post-time {
-    font-family: $sans-font-family;
+    @include set-font();
     @include type_scale(small);
     color:$lightgray;
     width:rhythm(2);
@@ -175,13 +168,13 @@
 }
 
 .user_post-title {
-    font-family: $sans-font-family;
+    @include set-font();
     @include type_scale(small);
 }
 
 .user_post-content {
     background-color:$offwhite;
-    font-family: $sans-font-family;
+    @include set-font();
     padding:rhythm(0.9);
     margin-left:rhythm(2);
 }
@@ -190,7 +183,7 @@
     padding:rhythm(0.9);
     padding-left:rhythm(1.8);
     p {
-      font-family: $sans-font-family;
+      @include set-font();
       font-style: italic;
       @include type_scale(small);
     }

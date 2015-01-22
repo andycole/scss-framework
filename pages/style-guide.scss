@@ -7,7 +7,7 @@
 // Base
 @import "_base/_config";
 @import "_base/_functions";
-@import "_base/_mixins";
+@import "_base/_mixins/_utils";
 @import "_base/_fonts";
 @import "_base/_icons";
 @import "_base/_reset";
@@ -30,7 +30,7 @@
     border-bottom:2px solid #ccc;
     .btn-previews {
         background-color:#888;
-        padding:10px;   
+        padding:10px;
         .btn {
             width:200px;
             float:left;

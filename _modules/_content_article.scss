@@ -13,7 +13,7 @@
 
     blockquote {
         @include type-scale(large);
-        font-family: $serif-font-family;
+        @include set-font(serif);
         font-style: italic;
         color:$midgray;
         width:40%;
@@ -65,7 +65,7 @@
                 width: calc(100% - 100px);
             }
             .article_details_author {
-                font-family: $sans-font-family;
+                @include set-font();
                 @include type-scale(small);
                 @include margin-trailer(0.25);
                 a {
@@ -118,7 +118,7 @@
     }
 
     .video-player {
-        .video-player_caption {            
+        .video-player_caption {
             background:#000;
             color:$midgray;
             @include type_scale(base);
@@ -152,7 +152,7 @@
             @include type-scale(xsmall);
             color:$midgray;
             line-height:1.7;
-            font-family:$serif-font-family;
+            @include set-font(serif);
             padding:0 10px;
             width:100%;
             max-width:100%;
@@ -176,7 +176,7 @@
         width:60%;
         position:relative;
         .article_gallery_control {
-            &--left {                
+            &--left {
                 position:absolute;
                 width:10%;
                 height:100%;

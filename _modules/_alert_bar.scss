@@ -1,4 +1,5 @@
-/********** Live Broadcast Bar *******/
+// Live broadcast bar
+// --------------------------------------------------
 .header_alert {
     width: 100%;
     text-align: center;
@@ -8,7 +9,8 @@
     }
 }
 
-// Live Streaming Alert Bar
+// Live streaming alert bar
+// --------------------------------------------------
 .header_alert--live {
     color: #fff;
     background: #da2f3d;
@@ -20,10 +22,10 @@
     }
     .btn {
         &:hover {
-            color:#fff;   
+            color:#fff;
             span {
                 background-color:#fff;
-            } 
+            }
         }
         span {
             display: inline-block;
@@ -35,16 +37,12 @@
             top: -1px;
             border-radius: 90px;
             animation: livebtn 1s;
-            -moz-animation: livebtn 1s;
-            -webkit-animation: livebtn 1s;
-            animation-iteration-count: infinite;
-            -moz-animation-iteration-count: infinite;
-            -webkit-animation-iteration-count: infinite;
         }
     }
 }
 
-// Activation Alert Bar
+// Activation alert bar
+// --------------------------------------------------
 .header_alert--activate {
     background-color: $alertBgColor;
     color: #a0855f;
@@ -56,37 +54,7 @@
     }
 }
 
-
-
 @keyframes livebtn {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.3;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/* Firefox */
-@-moz-keyframes livebtn {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.3;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/* Safari and Chrome */
-@-webkit-keyframes livebtn {
     0% {
         opacity: 1;
     }

@@ -98,9 +98,9 @@
                 padding-right:15px;
                 padding-left:15px;
                 @include breakpoint(md) {
-                    width:calc(100% - #{$gutter-width});
-                    padding-left: $gutter-width;
-                    padding-right:$gutter-width;
+                    width:100%;
+                    padding-left: $gutter-width + $column-width + $gutter-width + 5 + $gutter-width/2;
+                    padding-right:$gutter-width/2;
                 }
                 @include breakpoint(lg) {
                     @include column($total-columns - 1, true, false, -5);

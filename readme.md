@@ -1,3 +1,10 @@
+*Roadmap*
+- Abstract app specific styles.
+- Use Auto-prefix via grunt, instead of prefixer mixins.
+- Use SCSS lint.
+
+**Example config.rb set-up for compass**
+
 ```
 # Config.rb example
 encoding = "utf-8"

@@ -129,11 +129,6 @@
 }
 
 .noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -148,9 +143,9 @@
     vertical-align: middle;
 }
 
-/*.paralax_block-main {
-    background: #000 url("../img/wrap2.jpg") center top no-repeat;
-}*/
+// .paralax_block-main {
+//     background: #000 url("../img/wrap2.jpg") center top no-repeat;
+// }
 
 span.placeholder{
     position:absolute;
@@ -172,7 +167,7 @@ span.placeholder-hide{
   display:none;
 }
 
-/* overwrite for the HTML5 Boilerplate way to hide labels */
+// overwrite for the HTML5 Boilerplate way to hide labels
 label.visuallyhidden-with-placeholder{
     height:auto !important;
     overflow: visible !important;

@@ -41,7 +41,7 @@
                 width:120px;
                 margin-top:10px;
             }
-            
+
             img {
                 width:100%;
                 max-width: 100%;
@@ -57,7 +57,7 @@
                 text-transform: uppercase;
                 padding: 0 7px;
                 @include type-scale(tiny);
-                line-height:19px; 
+                line-height:19px;
                 &:hover {
                     background: $contentLabelColor;
                 }
@@ -75,7 +75,7 @@
         .content_details {
             overflow:hidden;
             zoom: 1;
-            
+
             .score {
                 display: block;
                 float: right;
@@ -96,7 +96,7 @@
         .content_details_author {
             @include type-scale(small);
             color:$midgray;
-            font-family: $sans-font-family;
+            @include set-font();
             @include margin-trailer(0.25);
         }
 
@@ -111,7 +111,7 @@
         .content_details_subheadline {
             @include type-scale(base);
             color:$darkgray;
-            font-family: $sans-font-family;
+            @include set-font();
             @include margin-trailer(0.25);
         }
 

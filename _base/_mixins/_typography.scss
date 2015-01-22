@@ -1,0 +1,40 @@
+// A mixin for scaling type that utilises the $type-scale map with the predefined values
+@mixin type-scale($scale, $map: $type-scale) {
+    $font-size: map-fetch($map, $scale font-size);
+    $base-lines: map-fetch($map, $scale base-lines);
+    @include adjust-font-size-to($font-size, $base-lines);
+}
+
+@mixin type-weight($weight) {
+    font-weight: map-get($type-weight, $weight);
+}
+
+// A ligature mixin, to be updated with a more modular one
+@mixin type-ligatures() {
+    font-feature-settings: "liga", "dlig";
+}
+
+// Decides whether to return a webfont stack or not (mobile users may not want the webfonts for speedier loading)
+@mixin set-font($font:sans) {
+
+    @if $font == mono {
+        // Mono
+        font-family: $mono-font-family;
+        @include breakpoint(md) {
+            font-family: $webfont-mono-font-family;
+        }
+    } @else if $font == serif {
+        // Serif
+        font-family: $serif-font-family;
+        @include breakpoint(md) {
+            font-family: $webfont-serif-font-family;
+        }
+    } @else if $font == sans {
+        // Sans-serif
+        font-family: $sans-font-family;
+        @include breakpoint(md) {
+            font-family: $webfont-sans-font-family;
+        }
+    }
+
+}

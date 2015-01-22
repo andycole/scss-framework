@@ -15,10 +15,8 @@
     }
 }
 
-/*******************************************************************************
- suggestions aside
- *******************************************************************************/
-
+// Suggestions aside
+// --------------------------------------------------
 .suggestions {
     margin-bottom: 20px;
 
@@ -28,13 +26,13 @@
 
     .tooltip {
         @include type_scale(small);
-        font-family: $sans-font-family;
+        @include set-font();
         color: $midgray;
     }
 
     .suggestion-result {
         @include type_scale(small);
-        font-family: $sans-font-family;
+        @include set-font();
     }
 
 }
@@ -48,14 +46,14 @@
     }
 
     td {
-        font-family: $sans-font-family;
+        @include set-font();
         @include type_scale(small);
 
         width: 50%;
         padding: 5px 10px;
 
         p {
-            font-family: $sans-font-family;
+            @include set-font();
             @include type_scale(small);
             text-align: right;
             padding: 0;
@@ -69,7 +67,7 @@
 }
 
 .contribute {
-    font-family: $sans-font-family;
+    @include set-font();
     background: $darkgray;
     min-height: 200px;
     border-radius: 3px;

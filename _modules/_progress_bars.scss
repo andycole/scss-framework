@@ -25,7 +25,7 @@ $default-meter-height: 20px !default;
 
 // Add grey meter mixin to a selector
 .progress-bar {
-  
+
     background-color: $default-base-color;
     @include progress-meter();
 

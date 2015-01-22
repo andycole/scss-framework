@@ -27,7 +27,7 @@
             bottom:-25px;
             right:-25px;
         }
-      
+
     }
 
     .game_details {
@@ -81,7 +81,7 @@
     .block-heading {
         @include type-scale(medium);
         @include breakpoint(md) {
-            @include type-scale(large);    
+            @include type-scale(large);
         }
     }
 }
@@ -97,7 +97,7 @@
     .block-heading {
         @include type-scale(medium);
         @include breakpoint(md) {
-            @include type-scale(large);    
+            @include type-scale(large);
         }
     }
 }

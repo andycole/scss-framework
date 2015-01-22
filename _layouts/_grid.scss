@@ -17,7 +17,6 @@ body {
     @include clearfix();
 }
 
-
 @mixin column($columnspan, $leftgutter: false, $rightgutter: false, $widthmodifier: false) {
     $gutterspan: $columnspan - 1;
     display: inline;

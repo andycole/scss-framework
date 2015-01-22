@@ -1,20 +1,19 @@
-//
 // Forms
 // --------------------------------------------------
 
-//** `<input>` background color
+// `<input>` background color
 $input-bg:                       #fff;
-//** `<input disabled>` background color
+// `<input disabled>` background color
 $input-bg-disabled:              $lightgray;
 
-//** Text color for `<input>`s
+// Text color for `<input>`s
 $input-color:                    $midgray;
-//** `<input>` border color
+// `<input>` border color
 $input-border:                   #ccc;
 
-//** Default `.form-control` border radius
+// Default `.form-control` border radius
 $input-border-radius-base:            3px;
-//** Large `.form-control` border radius
+// Large `.form-control` border radius
 $input-border-radius-large:      4px;
 // Small `.form-control` border radius
 $input-border-radius-small:      2px;
@@ -87,8 +86,6 @@ $cursor-disabled: not-allowed;
   &:-ms-input-placeholder { color: $color; }
   &::-webkit-input-placeholder  { color: $color; }
 }
-
-
 
 // Normalize form elements
 fieldset {
@@ -372,7 +369,7 @@ input[type="checkbox"] {
   margin-top: 5px;
   margin-bottom: 10px;
   color: lighten($midgray, 25%);
-  font-family: $sans-font-family;
+  @include set-font();
   @include type-scale(base);
 }
 
@@ -482,7 +479,7 @@ input[type="checkbox"] {
 
   // Reset spacing and right align labels, but scope to media queries so that
   // labels on narrow viewports stack the same as a default form example.
-  @include breakpoint(sm) {    
+  @include breakpoint(sm) {
     // Make form groups behave like rows
     .form-group {
         @include clearfix();

@@ -16,7 +16,7 @@ $tooltip-radius:              0;
   display: block;
   visibility: visible;
   // Reset font and text propertes given new insertion method
-  font-family: $base-font-family;
+  @include set-font();
   @include type-scale(xxsmall);
   font-weight: normal;
   opacity:0;

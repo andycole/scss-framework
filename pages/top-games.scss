@@ -5,10 +5,7 @@
 // Base
 @import "_base/_config";
 @import "_base/_functions";
-@import "_base/_mixins";
-
-.top_games {
-}
+@import "_base/_mixins/_utils";
 
 .top-game_intro p {
     @include type_scale(base);
