@@ -13,14 +13,6 @@
         "type": "git",
         "url": "git@github.com:andycole/scss-framework.git"
     },
-    "analyze": false,
-    "dependencies": {
-
-    },
-    "devDependencies": {
-        "bower": "~1.2.7",
-        "node-sass": "~1.0",
-    },
     "license": "GPLv3",
     "keywords": [
         "sass",
