@@ -3,5 +3,5 @@ node_modules
 *.css.map
 dist
 
-[branch "master"]
+[branch "release"]
 excludesfile = +info/release
