@@ -3,6 +3,12 @@
     "version": "0.0.2",
     "author": "Andy Cole <andy.cole@videogamer.com>",
     "description": "SCSS Essentials you shouldn't leave home without.",
+    "main": "_trousers.scss",
+    "ignore": [
+        "info",
+        ".gitignore",
+        "readme.md"
+    ],
     "contributors": [
         {
             "name": "Andy Cole",
