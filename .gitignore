@@ -1,3 +1,7 @@
-/node_modules
-/.sass-cache
-/dist
+node_modules
+.sass-cache
+*.css.map
+dist
+
+[branch "master"]
+excludesfile = +info/release

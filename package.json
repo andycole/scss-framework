@@ -1,8 +1,8 @@
 {
-    "name": "SCSS",
-    "version": "0.0.1",
+    "name": "Trousers",
+    "version": "0.0.2",
     "author": "Andy Cole <andy.cole@videogamer.com>",
-    "description": "VideoGamer app on Creo platform",
+    "description": "SCSS Essentials you shouldn't leave home without.",
     "contributors": [
         {
             "name": "Andy Cole",
