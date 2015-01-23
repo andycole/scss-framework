@@ -1,37 +1,44 @@
-*Roadmap*
-- Abstract app specific styles.
-- Use Auto-prefix via grunt, instead of prefixer mixins.
-- Use SCSS lint.
+#Trousers.css#
 
-**Example config.rb set-up for compass**
+###SCSS Essentials you shouldn't leave home without.###
 
-```
-# Config.rb example
-encoding = "utf-8"
+Trousers is a lightweight foundation for any SCSS based project. Yes, it is similar to bootstrap; only simpler and less opinionated.
 
-#########
-# 1. Set this to the root of your project when deployed:
-http_path = "/"
+You should be familiar with how SASS (specifically SCSS) works. If not, more info can be found on the [SASS site](http://sass-lang.com/).
 
-# 2. probably don't need to touch these
-css_dir = "./public/assets/css"
-sass_dir = "./public/assets/scss"
-images_dir = "./public/assets/img"
-fonts_dir = "./public/assets/fonts"
-javascripts_dir = "./public/assets/js"
-relative_assets = true
-#environment = :development
+##Installation & Usage##
+To wear Trousers you will first need to install SASS (3.3+) and a your choice of compiler, I recommend compass(1.0.1+).
 
-# 3. You can select your preferred output style here (can be overridden via the command line):
-#output_style = :expanded
-output_style = :compressed
+####Install via bower:####
+`bower install trousers`
 
-# To disable debugging comments that display the original location of your selectors. Uncomment:
-line_comments = false
+####Install manually:####
+To install Trousers simply include it in your project by cloning into your app's scss directory (e.g. /assets/scss/trousers).
 
-sourcemap= true
+####Usage####
+To wear Trousers import `_trousers.scss` on the first line of your app's main scss file like so:
+`@include /path/to/trousers/_trousers.scss`
 
-# don't touch this
-preferred_syntax = :scss
+##Features##
+- Normalise.css and sensible tag presets.
+- Helper classes (such as clearfix, floats etc).
+- Common page layouts sets and simple grid system.
+- Generic components such as buttons, switches, form styles, pagination, modals and more.
+- Extendable Sass configuration & variables (overwrite Trouser settings in your own app to customise presets, mixins or components).
 
-```
+##Roadmap##
+####Components####
+- Notifications.
+- Blockquotes (abstract from existing content_article).
+- Lists (ul/ol).
+- Nav lists.
+
+####Syntax & Tools####
+- Convert to BEM syntax method.
+- Apply `SCSSLint`.
+- Run through `SASSDOCS` to generate docs.
+- Document usage autoprefix recommendation.
+
+####Misc####
+- Reduce nesting in CSS blocks (for selector performance inprovement).
+- Abstract app specific styles (Trousers was originally a by-product of an app I created. Some of this app's remnants still exist as defaults & styles within Trousers.

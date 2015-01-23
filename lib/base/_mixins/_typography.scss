@@ -1,0 +1,98 @@
+// A mixin for scaling type that utilises the $type-scale map with the predefined values
+@mixin type-scale($scale, $map: $type-scale) {
+    $font-size: map-get( map-get($map, $scale), font-size );
+    $base-lines: map-get( map-get($map, $scale), base-lines );
+    @include adjust-font-size-to($font-size, $base-lines);
+}
+
+@mixin type-weight($weight) {
+    font-weight: map-get($type-weight, $weight);
+}
+
+// A ligature mixin, to be updated with a more modular one
+@mixin type-ligatures() {
+    font-feature-settings: "liga", "dlig";
+}
+
+// Decides whether to return a webfont stack or not (mobile users may not want the webfonts for speedier loading)
+@mixin set-font($font:sans) {
+
+    @if $font == mono {
+        // Mono
+        font-family: $mono-font-family;
+        @include breakpoint(md) {
+            font-family: $webfont-mono-font-family;
+        }
+    } @else if $font == serif {
+        // Serif
+        font-family: $serif-font-family;
+        @include breakpoint(md) {
+            font-family: $webfont-serif-font-family;
+        }
+    } @else if $font == sans {
+        // Sans-serif
+        font-family: $sans-font-family;
+        @include breakpoint(md) {
+            font-family: $webfont-sans-font-family;
+        }
+    }
+
+}
+
+// Mixin for word-break properties
+// http://www.w3.org/css3-text/#word-break
+// * legal values for $type : normal, keep-all, break-all
+//
+// Example:
+//    p.wordBreak {@include word-break(break-all);}
+//
+// Which generates:
+//    p.wordBreak {
+//      word-break: break-all;
+//      word-break: break-word;}
+//
+@mixin word-break($value: normal){
+  word-break: $value;
+  @if $value == break-all {
+      word-break: break-word;
+  }
+}
+
+// Mixin for the hyphens property
+//
+// W3C specification: http://www.w3.org/TR/css3-text/#hyphens
+// * legal values for $type : auto, manual, none
+//
+// Example:
+//  p {
+//    @include hyphens(auto);}
+// Which generates:
+//  p {
+//    -moz-hyphens: auto;
+//    -webkit-hyphens: auto;
+//    hyphens: auto;}
+//
+@mixin hyphens($value: auto){
+    hyphens: $value
+}
+
+// Mixin for x-browser hyphenation based on @auchenberg's post:
+// Removes the need for the <wbr/> HTML tag
+// http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+//
+//  Example:
+//  div {@include hyphenation;}
+//
+//  Which generates:
+//    div {
+//      -ms-word-break: break-all;
+//      word-break: break-all;
+//      word-break: break-word;
+//      -moz-hyphens: auto;
+//      -webkit-hyphens: auto;
+//      hyphens: auto;}
+//
+@mixin hyphenation {
+  @include word-break(break-all);
+  @include hyphens;
+}

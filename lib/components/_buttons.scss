@@ -1,0 +1,277 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($button, $map: $btn-variants) {
+    $color: map-get($map, $button color);
+    $background: map-get($map, $button background);
+    $border: map-get($map, $button border);
+    $hovercolor: map-get($map, $button colorhover);
+
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: $hovercolor;
+      background-color: transparent;
+      border-color: $border;
+      .icon {
+        fill: $hovercolor;
+      }
+    }
+    &:active,
+    &.active {
+      background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+      &,
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        background-color: $background;
+            border-color: $border;
+      }
+    }
+
+    .icon {
+      fill: $color;
+      width:22px;
+      height:22px;
+      margin-right:5px;
+      margin-top:-1px;
+    }
+
+    .badge {
+      color: $background;
+      background-color: $color;
+    }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  border-radius: $border-radius;
+  @include type-scale($font-size);
+}
+
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  display: inline-block;
+  margin-top: -2px; // re-align with baseline grid after border is added
+  margin-bottom: 0; // For input.btn
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  @include button-size(1px, rhythm(0.45), small, $base-line-height, $border-radius-btn);
+  @include user-select(none);
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    opacity:0.65;
+    box-shadow:none;
+  }
+  .label {
+    font-weight:normal;
+  }
+}
+input.btn, button.btn {
+  &:focus, &:active {
+    outline:0;
+  }
+}
+
+.btn-large {
+  @include button-size(4px, rhythm(0.9), medium, $base-line-height, $border-radius-btn)
+}
+
+// Colour Variations
+// --------------------------------------------------
+
+.btn-default {
+  @include button-variant("default");
+}
+.btn-primary {
+  @include button-variant("primary");
+}
+.btn-primary-light {
+  @include button-variant("primary-light");
+}
+.btn-secondary {
+  @include button-variant("secondary");
+}
+.btn-cancel {
+  @include button-variant("cancel");
+}
+.btn-dark {
+  @include button-variant("dark");
+}
+.btn-dark-transparent {
+  @include button-variant("dark-transparent");
+}
+.btn-light-transparent {
+  @include button-variant("light-transparent");
+}
+.btn-full-white {
+  @include button-variant("full-white");
+}
+.btn-text {
+  @include button-variant("text");
+}
+
+
+// Button with count i.e. '(_Members: 455_)'
+// --------------------------------------------------
+
+.btn--with-count {
+  span {
+    margin-right:10px;
+    display:inline-block;
+    @include type_weight(bold);
+  }
+}
+
+// Block button
+// --------------------------------------------------
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom:30px;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+// Unique instances
+// --------------------------------------------------
+
+// Load more button
+.btn-load-more {
+  @extend .btn-default;
+  display:block;
+  width:70%;
+  margin: rhythm(0.45) auto;
+}
+
+//Content edit button
+.btn-edit {
+  @include button-variant("edit");
+  display:block;
+  width:120px;
+  border-radius:0;
+  padding:0;
+  border:0;
+  @include type_scale(xsmall);
+  @include type_weight(regular);
+  position:fixed;
+  bottom:100px;
+  left:80px;
+  overflow:hidden;
+  cursor:default;
+  a {
+    color:$white;
+    padding:10px 5px;
+    display:block;
+    &:hover {
+      color:$yellow;
+    }
+  }
+  &:hover {
+    background:$darkgray;
+  }
+  .icon {
+    fill:$white;
+    width:26px;
+    height:26px;
+  }
+  .btn-edit-contribution {
+    float:left;
+
+    background:lighten($darkgray,3%);
+    padding:10px;
+    width:100%;
+    white-space: normal;
+    line-height:1.5;
+    em {
+      color:$yellow;
+      font-style: normal;
+    }
+  }
+}
+
+.rounded_icon {
+    float:left;
+    border-radius:45px;
+    background-color:#ccc;
+    display:block;
+    width:50px;
+    height:50px;
+    line-height: 48px;
+    padding-left: 10px;
+    margin-right:10px;
+    .icon {
+        height:30px;
+        width:30px;
+        fill:#fff;
+    }
+}
+
+.square_icon {
+    float:left;
+    background-color:#ccc;
+    display:block;
+    width:50px;
+    height:50px;
+    line-height: 48px;
+    .icon {
+        height:30px;
+        width:30px;
+        fill:#fff;
+    }
+}

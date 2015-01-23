@@ -1,0 +1,30 @@
+{
+    "name": "SCSS",
+    "version": "0.0.1",
+    "author": "Andy Cole <andy.cole@videogamer.com>",
+    "description": "VideoGamer app on Creo platform",
+    "contributors": [
+        {
+            "name": "Andy Cole",
+            "email": "andy.cole@videogamer.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:andycole/scss-framework.git"
+    },
+    "analyze": false,
+    "dependencies": {
+
+    },
+    "devDependencies": {
+        "bower": "~1.2.7",
+        "node-sass": "~1.0",
+    },
+    "license": "GPLv3",
+    "keywords": [
+        "sass",
+        "scss",
+        "css"
+    ]
+}

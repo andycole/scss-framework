@@ -1,0 +1,56 @@
+.section_collapsable {
+    .section_btn {
+        cursor:pointer;
+        display:block;
+        width:100%;
+        padding:15px;
+        color: $blue;
+        margin-bottom:0;
+        @extend .noselect;
+        &:hover {
+            background-color:$offwhite;
+            color:$black;
+            border-bottom-color:#ccc;
+            .section_indicator .icon {
+                fill: darken($lightgray, 5%);
+            }
+        }
+    }
+    .section_indicator {
+        float:right;
+        .icon {
+            fill: lighten($lightgray,10%);
+            width:24px;
+            height:24px;
+        }
+    }
+    &--open {
+        .section_indicator--open {
+            display:none;
+        }
+        .section_indicator--close {
+            display:inline-block;
+        }
+        form {
+            display:block;
+        }
+    }
+    &--closed {
+        .section_btn {
+            border-bottom:2px solid #e8e8e8;
+            opacity:0.7;
+        }
+        .section_indicator--open {
+            display:inline-block;
+        }
+        .section_indicator--close {
+            display:none;
+        }
+        .section_fold {
+            display:none;
+        }
+    }
+    .section_fold {
+        padding:15px 25px;
+    }
+}

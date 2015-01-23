@@ -1,0 +1,55 @@
+// Inverts a position (mainly used to gradient)
+@function inverse-side($side) {
+  @if      $side == top    { @return bottom; }
+  @else if $side == bottom { @return top; }
+  @else if $side == left   { @return right; }
+  @else if $side == right  { @return left; }
+}
+
+@mixin box-shadow($shadows...) {
+    box-shadow: $shadows;
+}
+
+@mixin transition($property, $duration, $easing) {
+    transition: $property $duration $easing; //W3C
+}
+
+@mixin box-sizing($val) {
+    box-sizing: $val;
+}
+
+@mixin user-select($select...) {
+  user-select: $select;
+}
+
+@mixin linear-gradient($gradientLine, $colorStops...) {
+  @if length($gradientLine) == 2 {
+  background-image:         linear-gradient(to #{inverse-side(nth($gradientLine, 1))} #{inverse-side(nth($gradientLine, 2))}, $colorStops);
+  } @else {
+  background-image:         linear-gradient(to #{inverse-side($gradientLine)}, $colorStops);
+  }
+}
+
+@mixin radial-gradient($gradient...) {
+    background-image: radial-gradient($gradient);
+}
+
+@mixin transition($transition...) {
+    transition: $transition;
+}
+
+@mixin transition-property($properties...) {
+    transition-property: $properties;
+}
+
+@mixin transform($transform...) {
+    transform: $transform;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: #{alpha(opacity=$opacity-ie)};
+}
