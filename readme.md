@@ -34,11 +34,12 @@ To wear Trousers import `_trousers.scss` on the first line of your app's main sc
 - Nav lists.
 
 ####Syntax & Tools####
-- Convert to BEM syntax method.
+- Convert to BEM syntax method & reduce selector run-on.
 - Apply `SCSSLint`.
 - Run through `SASSDOCS` to generate docs.
 - Document usage autoprefix recommendation.
 
 ####Misc####
+- Better variable names.
 - Reduce nesting in CSS blocks (for selector performance inprovement).
 - Abstract app specific styles (Trousers was originally a by-product of an app I created. Some of this app's remnants still exist as defaults & styles within Trousers.
