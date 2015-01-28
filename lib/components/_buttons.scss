@@ -6,12 +6,11 @@
 //
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
-
 @mixin button-variant($button, $map: $btn-variants) {
-    $color: map-get($map, $button color);
-    $background: map-get($map, $button background);
-    $border: map-get($map, $button border);
-    $hovercolor: map-get($map, $button colorhover);
+    $color: map-get(map-get($map, $button), color);
+    $background: map-get(map-get($map, $button), background);
+    $border: map-get(map-get($map, $button), border);
+    $hovercolor: map-get(map-get($map, $button), colorhover);
 
     color: $color;
     background-color: $background;

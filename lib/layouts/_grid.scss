@@ -3,9 +3,9 @@
 //-------------------------------
 
 // Defaults
-$column-width: 300px;
-$gutter-width: 40px;
-$total-columns: 4;
+$column-width: 300px !default;
+$gutter-width: 40px !default;
+$total-columns: 4 !default;
 $total-gutters: $total-columns + 1;
 
 // Set $total-width to 100% for a fluid layout

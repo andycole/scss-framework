@@ -1,45 +1,26 @@
-// Trousers.css 0.0.1
-// Don't leave home without them.
-// https://github.com/andycole/scss-framework
-// Copyright 2015 Andy Cole.
+// ========================================================
+// TROUSERS.CSS - v 0.0.1
+// ========================================================
+// A CSS framework you can't leave home without.
+//
+// https://github.com/andycole/trousers.css
+// Built by @sitegenius
 // GPLv3 License
 
 // Base
-@import "lib/base/config";
+@import "lib/defaults";
 
 // Mixins
-@import "lib/base/_mixins/_utils";
-@import "lib/base/_mixins/_responsive";
-@import "lib/base/_mixins/_typography";
-@import "lib/base/_mixins/_css3";
-@import "lib/base/_mixins/_vertical-rhythm";
+@import "lib/mixins/utils";
+@import "lib/mixins/responsive";
+@import "lib/mixins/typography";
+@import "lib/mixins/css3";
+@import "lib/mixins/vertical-rhythm";
 
 // Reset & Preset
-@import "lib/base/_reset";
-@import "lib/base/_presets";
+@import "lib/base/reset";
+@import "lib/base/presets";
 
 // Layout
-@import "lib/layouts/_grid";
-@import "lib/layouts/_layout";
-
-// UI Helpers
-@import "lib/base/_utils";
-// Components
-@import "lib/components/_accordion.scss";
-//@import "lib/components/_block-headings.scss";
-@import "lib/components/_buttons.scss";
-@import "lib/components/_checkboxes.scss";
-//@import "lib/components/_content_article.scss"; --> convert blockquote to generic class
-@import "lib/components/_forms.scss";
-@import "lib/components/_inline_alerts.scss";
-//@import "lib/components/_item-slider.scss";
-//@import "lib/components/_listing_menu.scss";
-@import "lib/components/_loading-animation.scss"; // --> convert loading spin image to a variable with a default
-@import "lib/components/_modals.scss";
-@import "lib/components/_pagination.scss";
-@import "lib/components/_progress_bars.scss";
-@import "lib/components/_select-boxes.scss";
-//@import "lib/components/_swiper.scss";
-@import "lib/components/_switches.scss";
-@import "lib/components/_tables.scss";
-@import "lib/components/_tooltips.scss";
+@import "lib/layouts/grid";
+@import "lib/layouts/layout";

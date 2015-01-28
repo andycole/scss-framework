@@ -1,7 +1,7 @@
 @include establish-baseline;
 
 body {
-    background-color:$bodyBackground;
+    background-color:$body-bg;
     @include set-font();
     font-weight: 400;
     color: $darkgray;

@@ -1,0 +1,271 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+// Colors
+// --------------------------------------------------
+
+//Basic colors
+$black:                     #111111 !default;
+$darkgray:                  #333333 !default;
+$midgray:                   #666666 !default;
+$lightgray:                 #999999 !default;
+$greywhite:                 #e7e7e7 !default;
+$white:                     #ffffff !default;
+$offwhite:                  #f6f6f6 !default;
+
+// Brand colors
+$blue:                      #228fb3 !default;
+$yellow:                    #f6c127 !default;
+$red:                       #ea3847 !default;
+$lightblue:                 #72bbd3 !default;
+$limegreen:                 #8bc862 !default;
+$darkteal:                  #475158 !default;
+
+
+// Color assignment
+// --------------------------------------------------
+
+// Scaffolding
+$body-bg:                   $darkteal                       !default;
+$text-color:                $black                          !default;
+$textHighlightColor:        $lightblue                      !default;
+
+// Links
+$linkColor:                 $blue                           !default;
+$linkColorHover:            darken($linkColor,10%)          !default;
+$headlineLinkColor:         $darkgray                       !default;
+$headlineLinkColorHover:    darken($headlineLinkColor,10%)  !default;
+
+// Fonts
+$headlineColor:             $darkgray !default;
+$subheadlineColor:          $black !default;
+
+// Component colors
+$contentLabelColor:         $lightblue !default;
+$blockHeadingColor:         $lightblue !default;
+
+$alertBgColor:              #f9ebc3 !default;
+
+// Media query breakpoints
+$screen-xs: 480px !default;  // Extra small screen
+$screen-sm: 768px !default;  // Small screen
+$screen-md: 992px !default;  // Medium screen
+$screen-lg: 1200px !default; // Large screen
+$screen-hg: 1400px !default; // Huge screen
+
+// Type settings
+// Type settings
+// --------------------------------------------------
+
+$sans-font-family:          sans-serif !default;
+$serif-font-family:         "Georgia", serif !default;
+$mono-font-family:          Menlo, Courier New, Courier, Mono, monospace !default;
+
+$webfont-sans-font-family:  "Droid Sans", sans-serif !default;
+$webfont-serif-font-family: "Noto Serif", "Georgia", serif !default;
+$webfont-mono-font-family:  "Inconsolata", Menlo, Courier New, Courier, Mono, monospace !default;
+
+$base-font-family:            $sans-font-family !default;
+
+// Compass Vertical Rhythm setup
+$base-font-size: 20px !default;
+$base-line-height: 36px !default;
+$rhythm-unit: "rem" !default;
+$rem-with-px-fallback: true !default;
+$round-to-nearest-half-line: true !default;
+
+// The type-scale Map contains the whole type scale.
+// Add your own sizes or modify these, they will be available in the type-scale mixin for use.
+$type-scale: (
+    tiny: (
+        font-size: 9px,
+        base-lines: 0.5
+    ),
+    xxsmall: (
+        font-size: 10px,
+        base-lines: 0.5
+    ),
+    xsmall: (
+        font-size: 13px,
+        base-lines: 0.75
+    ),
+    small: (
+        font-size: 15px,
+        base-lines: 0.75
+    ),
+    base: (
+        font-size: 16px,
+        base-lines: 0.85
+    ),
+    medium: (
+        font-size: $base-font-size,
+        base-lines: 1
+    ),
+    large: (
+        font-size: 24px,
+        base-lines: 1
+    ),
+    xlarge: (
+        font-size: 30px,
+        base-lines: 1.5
+    ),
+    xxlarge: (
+        font-size: 36px,
+        base-lines: 1.5
+    ),
+    xxxlarge: (
+        font-size: 50px,
+        base-lines: 2
+    )
+);
+
+$type-weight: (
+    thin: 200,
+    light: 300,
+    regular: 400,
+    bold: 700,
+    black: 900
+);
+
+// Z-index master list
+$zindex-page:              1000 !default;
+$zindex-navbar-bottom:     1025 !default;
+$zindex-navbar-top:        1050 !default;
+$zindex-navbar:            1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-loading:           2000 !default;
+$zindex-modal:             3000 !default;
+$zindex-dropmenu:          9999 !default;
+
+// Button settings
+// --------------------------------------------------
+$border-radius-btn: 45px !default;
+$border-radius-large: 5px !default;
+
+$btn-variants: (
+    default: (
+        color:#333,
+        colorhover:#333,
+        background:#fff,
+        border:#ccc
+    ),
+    primary: (
+        color:#fff,
+        colorhover: #fff,
+        background:$lightblue,
+        border:$lightblue
+    ),
+    primary-light: (
+        color:#fff,
+        colorhover: darken($lightblue, 5%),
+        background:$lightblue,
+        border:$lightblue
+    ),
+    secondary: (
+        color:$darkgray,
+        colorhover: darken($darkgray, 5%),
+        background:$yellow,
+        border:$yellow
+    ),
+    dark: (
+        color:#fff,
+        colorhover: $darkgray,
+        background:$darkgray,
+        border: $darkgray
+    ),
+    dark-transparent: (
+        color:#fff,
+        colorhover: #fff,
+        background:rgba(0, 0, 0, 0.6),
+        border: rgba(0, 0, 0, 0.6)
+    ),
+    light-transparent: (
+        color:#fff,
+        colorhover: $yellow,
+        background:transparent,
+        border: #fff
+    ),
+    cancel: (
+        color:#fff,
+        colorhover: darken($red, 5%),
+        background:$red,
+        border:$red
+    ),
+    full-white: (
+        color:$darkgray,
+        colorhover: $black,
+        background:$white,
+        border:$white
+    ),
+    edit: (
+        color:$white,
+        colorhover: $white,
+        background:$darkgray,
+        border:$darkgray
+    ),
+    text: (
+        color: $linkColor,
+        color-hover: $linkColorHover,
+        background: transparent,
+        border: none
+    )
+);
+
+
+// Switch button settings
+// --------------------------------------------------
+
+$switchTransition: .15s ease-out !default;
+
+$switch-variants: (
+    default: (
+        color:#333,
+        background:#fff,
+        border:#ccc
+    )
+);
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+// Table style settings
+// --------------------------------------------------
+$table-cell-padding:            8px !default;                // Padding for <th> and <td>
+$table-condensed-cell-padding:  5px !default;                // Padding for cells in .table-condensed
+$table-bg:                      transparent !default;        // Background color used for all default tables
+$table-bg-accent:               #f9f9f9 !default;            // Background color used for .table-striped
+$table-bg-hover:                #f5f5f5 !default;            // Background color used for .table-hover
+$table-bg-active:               $table-bg-hover !default;
+$table-border-color:            #ddd !default;               // Border color for table and cell borders
+
+// Uncategorised
+// --------------------------------------------------
+
+$column-width: 300px !default;
+$gutter-width: 40px !default;
+$total-columns: 4 !default;
+
+
+$masthead-height: 45px;
+$masthead-line-height: 45px;
+$masthead-bg-color: rgb(255, 255, 255);
+
+$masthead-padding-vertical:0;
+$masthead-padding-horizontal:15px;
+
+$nav-link-hover-bg: rgb(204, 204, 204);
+$nav-link-padding: 10px;
+
+$nav-disabled-link-color: #ccc;
+$nav-disabled-link-hover-color: $nav-disabled-link-color;

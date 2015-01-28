@@ -1,0 +1,27 @@
+.masthead {
+    position: relative;
+    min-height: $masthead-height; // Ensure a masthead always show
+    background-color: $masthead-bg-color;
+
+    .u-nav {
+        >li {
+            padding: $masthead-padding-vertical $masthead-padding-horizontal;
+        }
+    }
+}
+
+.masthead-widthContainer {
+    @extend .page_width_container;
+    padding:0;
+    position:relative;
+}
+
+.masthead-brand {
+    margin:0;
+    padding:0;
+    display:inline-block;
+    float: left;
+    > * {
+        margin: 0;
+    }
+}

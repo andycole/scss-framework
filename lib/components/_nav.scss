@@ -1,0 +1,56 @@
+.nav {
+    margin-top:0;
+    margin-bottom: 0;
+    padding-left: 0; // Override default ul/ol
+    list-style: none;
+    @extend .u-clearfix;
+
+    > li {
+        position: relative;
+        display: block;
+
+        > a {
+            position: relative;
+            display: block;
+            padding: $nav-link-padding;
+            &:hover,
+            &:focus {
+            text-decoration: none;
+            background-color: $nav-link-hover-bg;
+            }
+        }
+
+        // Disabled state sets text to gray and nukes hover/tab effects
+        &.disabled > a {
+            color: $nav-disabled-link-color;
+            &:hover,
+            &:focus {
+                color: $nav-disabled-link-hover-color;
+                text-decoration: none;
+                background-color: transparent;
+                cursor: default;
+            }
+        }
+    }
+
+    // Open dropdowns
+    .open > a {
+        &,
+        &:hover,
+        &:focus {
+            background-color: $nav-link-hover-bg;
+            border-color: $linkColor;
+        }
+    }
+
+    // Prevent images disappearing on IE8 when max-width is used
+    // See http://www.456bereastreet.com/archive/201202/using_max-width_on_images_can_make_them_disappear_in_ie8/
+    > li > a > img {
+        max-width: none;
+    }
+}
+.nav--horizontal {
+    > li {
+        float:left;
+    }
+}

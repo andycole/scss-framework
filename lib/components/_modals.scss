@@ -195,7 +195,7 @@ $default-translate-z : $default-translate-x  !default;
   padding: $modal-inner-padding 0 0 0;
   text-align: right; // right align buttons
   border-top: 2px solid $modal-footer-border-color;
-  @include clearfix; // clear it in case folks use .pull-* classes on buttons
+  @include clearfix;
 
   // Properly space out buttons
   .btn + .btn {

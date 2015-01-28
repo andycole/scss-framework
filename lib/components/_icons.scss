@@ -1,0 +1,17 @@
+.icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    fill: #333333;
+    vertical-align:middle;
+
+    // Prevents mouseleave(JS event) from firing when icon is hovered
+    pointer-events: none;
+}
+
+.svg_defs {
+    left:-100%;
+    top:-100%;
+    position:absolute;
+    display:none;
+}

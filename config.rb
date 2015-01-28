@@ -8,8 +8,8 @@ encoding = "utf-8"
 http_path = "/"
 
 # 2. probably don't need to touch these
-css_dir = "./dist/css"
-sass_dir = "./lib"
+css_dir = "./dist/"
+sass_dir = "."
 relative_assets = true
 #environment = :development
 

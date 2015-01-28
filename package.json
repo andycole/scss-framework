@@ -1,0 +1,30 @@
+{
+    "name": "Trousers",
+    "version": "0.0.2",
+    "author": "Andy Cole <andy.cole@videogamer.com>",
+    "description": "SCSS Essentials you shouldn't leave home without.",
+    "main": "_trousers.scss",
+    "yeoman-generator": "^0.17.3",
+    "ignore": [
+        "info",
+        ".gitignore",
+        "config.rb",
+        "bower.json"
+    ],
+    "contributors": [
+        {
+            "name": "Andy Cole",
+            "email": "andy.cole@videogamer.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:andycole/scss-framework.git"
+    },
+    "license": "GPLv3",
+    "keywords": [
+        "sass",
+        "scss",
+        "css"
+    ]
+}

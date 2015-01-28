@@ -2,8 +2,9 @@
 // --------------------------------------------------
 
 // Clearfix
-.cf {
-    @include clearfix();
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.u-clearfix {
+    @include clearfix;
 }
 
 .float-right {

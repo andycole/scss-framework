@@ -33,10 +33,15 @@ To wear Trousers import `_trousers.scss` on the first line of your app's main sc
 - Lists (ul/ol).
 - Nav lists.
 
+####Mixins####
+- Extend grid system to allow more flexibility
+- 
+
 ####Syntax & Tools####
 - Convert to BEM syntax method & reduce selector run-on.
 - Apply `SCSSLint`.
 - Run through `SASSDOCS` to generate docs.
+- Consider TRUE Sass testing
 - Document usage autoprefix recommendation.
 
 ####Misc####
