@@ -35,7 +35,6 @@ To wear Trousers import `_trousers.scss` on the first line of your app's main sc
 
 ####Mixins####
 - Extend grid system to allow more flexibility
-- 
 
 ####Syntax & Tools####
 - Convert to BEM syntax method & reduce selector run-on.
