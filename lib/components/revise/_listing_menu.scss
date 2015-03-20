@@ -12,17 +12,17 @@
             a {
                 padding:0 40px;
                 display:block;
-                color: $darkgray;
+                color: #333333;
                 @include type_scale(medium);
                 @include type_weight(bold);
                 line-height:2.8;
                 &:hover {
-                    color:$black;
+                    color:#000000;
                 }
                 &.link--child-is-active, &.link--is-active {
-                    color:$white;
-                    background-color: $lightblue;
-                    border-right:5px solid darken($lightblue, 10%);
+                    color:#ffffff;
+                    background-color: #72bbd3;
+                    border-right:5px solid darken(#72bbd3, 10%);
                     @include type_weight(bold);
                 }
             }
@@ -34,22 +34,22 @@
                         @include type_scale(small);
                         @include type_weight(regular);
                         .icon {
-                            fill: $greywhite;
+                            fill: #e7e7e7;
                             width:14px;
                             height:14px;
                         }
                         &.link--is-active {
                             @include type_weight(bold);
-                            color:$darkgray;
+                            color:#333333;
                             background-color: transparent;
                             border-right:none;
                             .icon {
-                                fill: $darkgray;
+                                fill: #333333;
                             }
                         }
                         &:hover {
                             .icon {
-                                fill:$lightblue;
+                                fill:#72bbd3;
                             }
                         }
                     }

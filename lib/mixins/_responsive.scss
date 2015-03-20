@@ -17,7 +17,7 @@
     @media (min-width: $screen-hg)  { @content; }
   }
   @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+     @media ($point)  { @content; }
   }
 }
 

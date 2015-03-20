@@ -4,22 +4,22 @@
         display:block;
         width:100%;
         padding:15px;
-        color: $blue;
+        color: #228fb3;
         margin-bottom:0;
         @extend .noselect;
         &:hover {
-            background-color:$offwhite;
-            color:$black;
+            background-color:#f6f6f6;
+            color:#000000;
             border-bottom-color:#ccc;
             .section_indicator .icon {
-                fill: darken($lightgray, 5%);
+                fill: darken(#999999, 5%);
             }
         }
     }
     .section_indicator {
         float:right;
         .icon {
-            fill: lighten($lightgray,10%);
+            fill: lighten(#999999,10%);
             width:24px;
             height:24px;
         }

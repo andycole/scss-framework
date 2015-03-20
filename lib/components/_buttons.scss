@@ -79,6 +79,7 @@
   vertical-align: middle;
   cursor: pointer;
   background-image: none;
+  background-color: #ddd;
   border: 2px solid transparent;
   white-space: nowrap;
   @include button-size(1px, rhythm(0.45), small, $base-line-height, $border-radius-btn);
@@ -86,6 +87,8 @@
 
   &:hover,
   &:focus {
+    background-color: transparent;
+    border: 2px solid #ddd;
     text-decoration: none;
   }
 
@@ -214,31 +217,31 @@ input[type="button"] {
   overflow:hidden;
   cursor:default;
   a {
-    color:$white;
+    color:#ffffff;
     padding:10px 5px;
     display:block;
     &:hover {
-      color:$yellow;
+      color:#f6c127;
     }
   }
   &:hover {
-    background:$darkgray;
+    background:#333333;
   }
   .icon {
-    fill:$white;
+    fill:#ffffff;
     width:26px;
     height:26px;
   }
   .btn-edit-contribution {
     float:left;
 
-    background:lighten($darkgray,3%);
+    background:lighten(#333333,3%);
     padding:10px;
     width:100%;
     white-space: normal;
     line-height:1.5;
     em {
-      color:$yellow;
+      color:#f6c127;
       font-style: normal;
     }
   }

@@ -18,21 +18,21 @@
         cursor:pointer;
         input[type=checkbox] {
             & + .icon {
-                fill:lighten($midgray,30%);
+                fill:lighten(#666666,30%);
                 width:24px;
                 height:24px;
                 margin-right:3px;
                 & + span {
-                    color: lighten($midgray,30%);
+                    color: lighten(#666666,30%);
                 }
             }
         }
 
         input[type=checkbox]:checked {
             & + .icon {
-                    fill: $limegreen;
+                    fill: #8bc862;
                 & + span {
-                    color: $darkgray;
+                    color: #333333;
                 }
             }
         }

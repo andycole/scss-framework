@@ -3,48 +3,27 @@
 // --------------------------------------------------
 
 
-// Colors
-// --------------------------------------------------
-
-//Basic colors
-$black:                     #111111 !default;
-$darkgray:                  #333333 !default;
-$midgray:                   #666666 !default;
-$lightgray:                 #999999 !default;
-$greywhite:                 #e7e7e7 !default;
-$white:                     #ffffff !default;
-$offwhite:                  #f6f6f6 !default;
-
-// Brand colors
-$blue:                      #228fb3 !default;
-$yellow:                    #f6c127 !default;
-$red:                       #ea3847 !default;
-$lightblue:                 #72bbd3 !default;
-$limegreen:                 #8bc862 !default;
-$darkteal:                  #475158 !default;
-
-
 // Color assignment
 // --------------------------------------------------
 
 // Scaffolding
-$body-bg:                   $darkteal                       !default;
-$text-color:                $black                          !default;
-$textHighlightColor:        $lightblue                      !default;
+$body-bg:                   #475158                         !default;
+$text-color:                #000000                         !default;
+$textHighlightColor:        #72bbd3                      !default;
 
 // Links
-$linkColor:                 $blue                           !default;
+$linkColor:                 #228fb3                           !default;
 $linkColorHover:            darken($linkColor,10%)          !default;
-$headlineLinkColor:         $darkgray                       !default;
+$headlineLinkColor:         #333333                       !default;
 $headlineLinkColorHover:    darken($headlineLinkColor,10%)  !default;
 
 // Fonts
-$headlineColor:             $darkgray !default;
-$subheadlineColor:          $black !default;
+$headlineColor:             #333333 !default;
+$subheadlineColor:          #000000 !default;
 
 // Component colors
-$contentLabelColor:         $lightblue !default;
-$blockHeadingColor:         $lightblue !default;
+$contentLabelColor:         #72bbd3 !default;
+$blockHeadingColor:         #72bbd3 !default;
 
 $alertBgColor:              #f9ebc3 !default;
 
@@ -101,7 +80,7 @@ $type-scale: (
     ),
     medium: (
         font-size: $base-font-size,
-        base-lines: 1
+        base-lines: 0.9
     ),
     large: (
         font-size: 24px,
@@ -154,26 +133,26 @@ $btn-variants: (
     primary: (
         color:#fff,
         colorhover: #fff,
-        background:$lightblue,
-        border:$lightblue
+        background:#72bbd3,
+        border:#72bbd3
     ),
     primary-light: (
         color:#fff,
-        colorhover: darken($lightblue, 5%),
-        background:$lightblue,
-        border:$lightblue
+        colorhover: darken(#72bbd3, 5%),
+        background:#72bbd3,
+        border:#72bbd3
     ),
     secondary: (
-        color:$darkgray,
-        colorhover: darken($darkgray, 5%),
-        background:$yellow,
-        border:$yellow
+        color:#333333,
+        colorhover: darken(#333333, 5%),
+        background:#f6c127,
+        border:#f6c127
     ),
     dark: (
         color:#fff,
-        colorhover: $darkgray,
-        background:$darkgray,
-        border: $darkgray
+        colorhover: #333333,
+        background:#333333,
+        border: #333333
     ),
     dark-transparent: (
         color:#fff,
@@ -183,33 +162,33 @@ $btn-variants: (
     ),
     light-transparent: (
         color:#fff,
-        colorhover: $yellow,
+        colorhover: #f6c127,
         background:transparent,
         border: #fff
     ),
     cancel: (
         color:#fff,
-        colorhover: darken($red, 5%),
-        background:$red,
-        border:$red
+        colorhover: darken(#ea3847, 5%),
+        background:#ea3847,
+        border:#ea3847
     ),
     full-white: (
-        color:$darkgray,
-        colorhover: $black,
-        background:$white,
-        border:$white
+        color:#333333,
+        colorhover: #000000,
+        background:#ffffff,
+        border:#ffffff
     ),
     edit: (
-        color:$white,
-        colorhover: $white,
-        background:$darkgray,
-        border:$darkgray
+        color:#ffffff,
+        colorhover: #ffffff,
+        background:#333333,
+        border:#333333
     ),
     text: (
         color: $linkColor,
         color-hover: $linkColorHover,
         background: transparent,
-        border: none
+        border: transparent
     )
 );
 
@@ -249,23 +228,110 @@ $table-bg-hover:                #f5f5f5 !default;            // Background color
 $table-bg-active:               $table-bg-hover !default;
 $table-border-color:            #ddd !default;               // Border color for table and cell borders
 
+// Form style settings
+// --------------------------------------------------
+
+// `<input>` background color
+$input-bg:                       #fff !default;
+// `<input disabled>` background color
+$input-bg-disabled:              #999999 !default;
+
+// Text color for `<input>`s
+$input-color:                    #666666 !default;
+// `<input>` border color
+$input-border:                   #ccc !default;
+// `<input>` border width
+$input-border-width:             2px !default;
+
+// Default `.form-control` border radius
+$input-border-radius-base:       3px !default;
+// Large `.form-control` border radius
+$input-border-radius-large:      4px !default;
+// Small `.form-control` border radius
+$input-border-radius-small:      2px !default;
+
+// Border color for inputs on focus
+$input-border-focus:             #72bbd3 !default;
+
+// Placeholder text color
+$input-color-placeholder:        #999 !default;
+
+// Default `.form-control` height
+$input-height-base:              ($base-line-height + (2px * 2) + 2) !default;
+// Large `.form-control` height
+$input-height-large:             30px !default;
+// Small `.form-control` height
+$input-height-small:             20px !default;
+
+$legend-color:                   #333333 !default;
+$legend-border-color:            #e5e5e5 !default;
+
+// Background color for textual input addons
+$input-group-addon-bg:           #999999 !default;
+// Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+// Disabled cursor for form controls and buttons.
+$cursor-disabled: not-allowed !default;
+
+// Modal style settings
+// --------------------------------------------------
+
+// Padding applied to the modal body
+$modal-inner-padding:         15px !default;
+
+// Padding applied to the modal title
+$modal-title-padding:         15px !default;
+// Modal title line-height
+$modal-title-line-height:     $base-line-height !default;
+
+// Background color of modal content area
+$modal-content-bg:                             #fff !default;
+// Modal content border color
+$modal-content-border-color:                   rgba(0,0,0,.2) !default;
+// Modal content border color **for IE8**
+$modal-content-fallback-border-color:          #999 !default;
+
+// Modal backdrop background color
+$modal-backdrop-bg:           #000 !default;
+// Modal backdrop opacity
+$modal-backdrop-opacity:      .5 !default;
+// Modal header border color
+$modal-header-border-color:   #f2f2f2 !default;
+// Modal footer border color
+$modal-footer-border-color:   $modal-header-border-color !default;
+
+$modal-lg:                    900px !default;
+$modal-md:                    600px !default;
+$modal-sm:                    300px !default;
+
+// The default x-length for translations
+$default-translate-x : 1em                  !default;
+// The default y-length for translations
+$default-translate-y : $default-translate-x !default;
+// The default z-length for translations
+$default-translate-z : $default-translate-x !default;
+
 // Uncategorised
 // --------------------------------------------------
 
 $column-width: 300px !default;
 $gutter-width: 40px !default;
+$gutter-width-min: 15px !default;
 $total-columns: 4 !default;
 
 
-$masthead-height: 45px;
-$masthead-line-height: 45px;
-$masthead-bg-color: rgb(255, 255, 255);
+$masthead-height: 45px !default;
+$masthead-line-height: 45px !default;
+$masthead-bg-color: rgb(255, 255, 255) !default;
 
-$masthead-padding-vertical:0;
-$masthead-padding-horizontal:15px;
+$masthead-padding-vertical:0 !default;
+$masthead-padding-horizontal:15px !default;
 
-$nav-link-hover-bg: rgb(204, 204, 204);
-$nav-link-padding: 10px;
+$nav-link-hover-bg: rgb(204, 204, 204) !default;
+$nav-link-padding: 10px !default;
+$nav-link-color: $linkColor !default;
+$nav-link-hover-color: $linkColorHover !default;
 
-$nav-disabled-link-color: #ccc;
-$nav-disabled-link-hover-color: $nav-disabled-link-color;
+$nav-disabled-link-color: #ccc !default;
+$nav-disabled-link-hover-color: $nav-disabled-link-color !default;

@@ -1,14 +1,20 @@
 // Components
 @import "lib/components/accordion.scss";
+
 //@import "lib/components/block-headings.scss";
+
 @import "lib/components/buttons.scss";
 @import "lib/components/checkboxes.scss";
+
 //@import "lib/components/content_article.scss"; --> convert blockquote to generic class
+
 @import "lib/components/forms.scss";
 @import "lib/components/icons";
 @import "lib/components/inline-alerts.scss";
+
 //@import "lib/components/item-slider.scss";
 //@import "lib/components/listing_menu.scss";
+
 @import "lib/components/loading-animation.scss"; // --> convert loading spin image to a variable with a default
 @import "lib/components/masthead.scss";
 @import "lib/components/modals.scss";
@@ -16,7 +22,9 @@
 @import "lib/components/pagination.scss";
 @import "lib/components/progress-bars.scss";
 @import "lib/components/select-boxes.scss";
+
 //@import "lib/components/swiper.scss";
+
 @import "lib/components/switches.scss";
 @import "lib/components/tables.scss";
 @import "lib/components/tooltips.scss";

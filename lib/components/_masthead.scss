@@ -3,7 +3,7 @@
     min-height: $masthead-height; // Ensure a masthead always show
     background-color: $masthead-bg-color;
 
-    .u-nav {
+    .nav {
         >li {
             padding: $masthead-padding-vertical $masthead-padding-horizontal;
         }

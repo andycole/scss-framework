@@ -7,19 +7,20 @@
     @include clearfix;
 }
 
-.float-right {
+.u-pullRight {
     float:right !important;
 }
-.float-left {
+.u-pullLeft {
     float:left !important;
 }
-.clear-left {
+
+.u-clearLeft {
   clear:left;
 }
-.clear-right {
+.u-clearRight {
   clear:right;
 }
-.clear-both {
+.u-clearBoth {
   clear:both;
 }
 
@@ -72,7 +73,7 @@
 }
 
 .full-block {
-    @extend .clear-both;
+    @extend .u-clearBoth;
     margin-left: 0-$gutter-width;
     margin-right: 0-$gutter-width;
     padding-left:$gutter-width;
@@ -92,7 +93,7 @@
 }
 
 .hr {
-  @extend .clear-both;
+  @extend .u-clearBoth;
   height:2px;
   background-color:#eaedee;
   width:100%;
@@ -123,7 +124,7 @@
     position:absolute;
     top:rhythm(0.9);
     left:rhythm(0.9);
-    fill:$lightgray;
+    fill:#999999;
     width:20px;
     height:20px;
   }

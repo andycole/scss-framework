@@ -1,6 +1,6 @@
 $default-base-border-radius: 10px !default;
-$default-meter-color: $lightblue !default;
-$default-base-color: $white !default;
+$default-meter-color: #72bbd3 !default;
+$default-base-color: #ffffff !default;
 $default-meter-height: 20px !default;
 
 @mixin progress-meter($meter-height: $default-meter-height, $border-radius: $default-base-border-radius, $meter-color: $default-meter-color) {
@@ -30,13 +30,13 @@ $default-meter-height: 20px !default;
     @include progress-meter();
 
     > span {
-        @include progress-meter-color($lightblue);
+        @include progress-meter-color(#72bbd3);
     }
 
     //Color Variants
     &.progress-bar_yellow {
         > span {
-            @include progress-meter-color($yellow);
+            @include progress-meter-color(#f6c127);
         }
     }
 

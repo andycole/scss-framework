@@ -1,48 +1,6 @@
 // Forms
 // --------------------------------------------------
 
-// `<input>` background color
-$input-bg:                       #fff;
-// `<input disabled>` background color
-$input-bg-disabled:              $lightgray;
-
-// Text color for `<input>`s
-$input-color:                    $midgray;
-// `<input>` border color
-$input-border:                   #ccc;
-
-// Default `.form-control` border radius
-$input-border-radius-base:            3px;
-// Large `.form-control` border radius
-$input-border-radius-large:      4px;
-// Small `.form-control` border radius
-$input-border-radius-small:      2px;
-
-// Border color for inputs on focus
-$input-border-focus:             $lightblue;
-
-// Placeholder text color
-$input-color-placeholder:        #999;
-
-// Default `.form-control` height
-$input-height-base:              ($base-line-height + (2px * 2) + 2);
-// Large `.form-control` height
-$input-height-large:             30px;
-// Small `.form-control` height
-$input-height-small:             20px;
-
-$legend-color:                   $darkgray;
-$legend-border-color:            #e5e5e5;
-
-// Background color for textual input addons
-$input-group-addon-bg:           $lightgray;
-// Border color for textual input addons
-$input-group-addon-border-color: $input-border;
-
-// Disabled cursor for form controls and buttons.
-$cursor-disabled: not-allowed;
-
-
 // Form control focus state
 @mixin form-control-focus($color: $input-border-focus) {
   $color-rgba: rgba(red($color), green($color), blue($color), .6);
@@ -163,7 +121,7 @@ output {
 
 .form-wrap {
   padding:rhythm(0.45);
-  background-color: $offwhite;
+  background-color: #f6f6f6;
   margin:rhythm(0.9) 0;
 }
 
@@ -199,7 +157,7 @@ output {
   color: $input-color;
   background-color: $input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 2px solid $input-border;
+  border: $input-border-width solid $input-border;
   border-radius: $input-border-radius-base;
   @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
   @include transition('border-color ease-in-out .15s, box-shadow ease-in-out .15s');
@@ -368,7 +326,7 @@ input[type="checkbox"] {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: lighten($midgray, 25%);
+  color: lighten(#666666, 25%);
   @include set-font();
   @include type-scale(base);
 }
@@ -381,75 +339,79 @@ input[type="checkbox"] {
 //
 // Requires wrapping inputs and labels with `.form-group` for proper display of
 // default HTML form controls and our custom form controls (e.g., input groups).
-//
-// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
 
 .form-inline {
-  @include breakpoint(sm) {
-    .form-group {
-      display: inline-block;
-      margin-bottom: 0;
-      vertical-align: middle;
+    .form-control,
+    .form-group,
+    .form-select {
+        display: inline-block;
+        margin-bottom:0;
     }
+    @include breakpoint(sm) {
+        .form-group {
+            display: inline-block;
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
 
-    // In navbar-form, allow folks to *not* use `.form-group`
-    .form-control {
-      display: inline-block;
-      width: auto; // Prevent labels from stacking above inputs in `.form-group`
-      vertical-align: middle;
+        // In navbar-form, allow folks to *not* use `.form-group`
+        .form-control {
+            display: inline-block;
+            width: auto; // Prevent labels from stacking above inputs in `.form-group`
+            vertical-align: middle;
+        }
+
+        // Make static controls behave like regular ones
+        .form-control-static {
+
+        }
+
+        .input-group {
+            display: inline-table;
+            vertical-align: middle;
+
+            .input-group-addon,
+            .input-group-btn,
+            .form-control {
+                width: auto;
+            }
+        }
+
+        // Input groups need that 100% width though
+        .input-group > .form-control {
+            width: 100%;
+        }
+
+        .control-label {
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+
+        // Remove default margin on radios/checkboxes that were used for stacking, and
+        // then undo the floating of radios and checkboxes to match (which also avoids
+        // a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
+        .radio,
+        .checkbox {
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 0;
+            vertical-align: middle;
+
+            label {
+                padding-left: 0;
+            }
+        }
+        .radio input[type="radio"],
+        .checkbox input[type="checkbox"] {
+            position: relative;
+            margin-left: 0;
+        }
+
+        // Re-override the feedback icon.
+        .has-feedback .form-control-feedback {
+            top: 0;
+        }
     }
-
-    // Make static controls behave like regular ones
-    .form-control-static {
-      display: inline-block;
-    }
-
-    .input-group {
-      display: inline-table;
-      vertical-align: middle;
-
-      .input-group-addon,
-      .input-group-btn,
-      .form-control {
-        width: auto;
-      }
-    }
-
-    // Input groups need that 100% width though
-    .input-group > .form-control {
-      width: 100%;
-    }
-
-    .control-label {
-      margin-bottom: 0;
-      vertical-align: middle;
-    }
-
-    // Remove default margin on radios/checkboxes that were used for stacking, and
-    // then undo the floating of radios and checkboxes to match (which also avoids
-    // a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
-    .radio,
-    .checkbox {
-      display: inline-block;
-      margin-top: 0;
-      margin-bottom: 0;
-      vertical-align: middle;
-
-      label {
-        padding-left: 0;
-      }
-    }
-    .radio input[type="radio"],
-    .checkbox input[type="checkbox"] {
-      position: relative;
-      margin-left: 0;
-    }
-
-    // Re-override the feedback icon.
-    .has-feedback .form-control-feedback {
-      top: 0;
-    }
-  }
 }
 
 

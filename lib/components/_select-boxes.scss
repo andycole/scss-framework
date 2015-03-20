@@ -54,6 +54,6 @@ $arrow-position: ($select-height / 2) - ($arrow-height - 1);
     @include type-scale(base);
 }
 .options li:hover {
-    background-color:$blue;
+    background-color:#228fb3;
     color:white;
 }

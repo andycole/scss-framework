@@ -13,7 +13,7 @@
     margin: 0 0-$gutter-width;
     padding:rhythm(0.9) $gutter-width;
     width:auto;
-    background-color:$offwhite;
+    background-color:#f6f6f6;
 }
 .item-slider-list {
     clear:both;
@@ -35,7 +35,7 @@
             float:left;
         }
         &:hover h3 {
-            color: $black;
+            color: #000000;
         }
     }
     .thumb_up {
@@ -64,8 +64,8 @@
     .item-slider-control {
         position:relative;
         padding:10px;
-        border:1px solid $greywhite;
-        background-color: $white;
+        border:1px solid #e7e7e7;
+        background-color: #ffffff;
         display:block;
         width: 40px;
         height:40px;
@@ -76,7 +76,7 @@
             left:10px;
             height:20px;
             width:20px;
-            fill:$midgray;
+            fill:#666666;
         }
         &-prev {
             border-radius: 50% 0 0 50%;
@@ -86,10 +86,10 @@
             border-left:0;
         }
         &:hover {
-            background-color:$offwhite;
-            border-color: darken($greywhite,5%);
+            background-color:#f6f6f6;
+            border-color: darken(#e7e7e7,5%);
             .icon {
-                fill:$darkgray;
+                fill:#333333;
             }
         }
     }

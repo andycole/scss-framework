@@ -32,7 +32,7 @@
         @include type-scale(medium);
         @include type-weight(bold);
         text-align:center;
-        color:$white;
+        color:#ffffff;
         padding:15px 10px;
         @include set-font();
     }
