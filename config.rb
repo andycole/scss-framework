@@ -11,7 +11,7 @@ http_path = "/"
 css_dir = "./dist/"
 sass_dir = "."
 relative_assets = true
-#environment = :development
+environment = :development
 
 # 3. You can select your preferred output style here (can be overridden via the command line):
 #output_style = :expanded

@@ -2,7 +2,7 @@ $select-height: 42px;
 
 $arrow-height:6px;
 
-$arrow-position: ($select-height / 2) - ($arrow-height - 1);
+$arrow-position: ($select-height / 2) - ($arrow-height - 3);
 
 .form-select {
     cursor:pointer;

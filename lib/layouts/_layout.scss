@@ -54,23 +54,21 @@
                 padding-right:15px;
                 padding-left:15px;
                 @include breakpoint(md) {
-                    width:calc(100% - $gutter-width);
-                    padding-left: $gutter-width;
-                    padding-right:$gutter-width;
-                }
-                @include breakpoint(lg) {
                     @include column($total-columns - 1, true, false, -5);
                     width:calc(100% - #{$gutter-width + $column-width + $gutter-width + 5});
                     padding-right: $gutter-width;
                     padding-left: $gutter-width;
                 }
-
             }
             .sidebar {
-                @include column(1, true, true , 5px);
                 display:none;
-                @include breakpoint(lg) {
+                @include breakpoint(md) {
                     display:block;
+                    @include column(1, true, true, 5px);
+                    border-right:5px solid #f6f6f6;
+                }
+                .sidebar_contents {
+                    max-width:300px;
                 }
             }
         }
@@ -85,6 +83,9 @@
                     display:block;
                     @include column(1, true, true, 5px);
                     border-right:5px solid #f6f6f6;
+                }
+                .aside_contents {
+                    max-width:300px;
                 }
             }
             .main {

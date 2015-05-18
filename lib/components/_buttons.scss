@@ -153,6 +153,17 @@ input.btn, button.btn {
 .btn-text {
   @include button-variant("text");
 }
+.btn-grouped {
+  @include button-variant("grouped");
+  &:hover {
+    background-color: map-get(map-get($btn-variants, "grouped"), colorhover);
+    color: map-get(map-get($btn-variants, "grouped"), texthover);
+  }
+  &--active {
+    background-color: map-get(map-get($btn-variants, "grouped"), colorhover);
+    color: map-get(map-get($btn-variants, "grouped"), texthover);
+  }
+}
 
 
 // Button with count i.e. '(_Members: 455_)'
@@ -187,6 +198,24 @@ input[type="reset"],
 input[type="button"] {
   &.btn-block {
     width: 100%;
+  }
+}
+
+// Grouped buttons
+// --------------------------------------------------
+.btn-group {
+  .btn {
+    border-radius:0;
+  }
+  .btn:first-child {
+    border-bottom-left-radius: $border-radius-btn;
+    border-top-left-radius: $border-radius-btn;
+    border-right-width: 0;
+  }
+  .btn:last-child {
+    border-bottom-right-radius: $border-radius-btn;
+    border-top-right-radius: $border-radius-btn;
+    border-left-width: 0;
   }
 }
 
